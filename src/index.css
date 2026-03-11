@@ -1,3 +1,20 @@
 @import "tailwindcss";
 :root {
+    --color-primary: #171c2a;
+    --color-secondary: #ffd000;
+    --color-background: #171c2a;
+    --color-stockland: #2a6df6;
+    --color-text: #e2e2e2;
+
+    --width-container: 1600px;
+}
+
+main,
+header,
+footer {
+    font-family: "Monospace", sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    max-width: var(--width-container);
+    margin-inline: auto;
 }
