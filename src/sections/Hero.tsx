@@ -10,9 +10,15 @@ function Hero() {
                 </h2>
                 <p className="mt-4 max-w-125 text-(--color-text-secondary) md:text-xl">
                     I’m currently working as a junior front-end developer at{" "}
-                    <span className="font-bold text-(--color-stockland)">
-                        Stockland
-                    </span>{" "}
+                    <a
+                        href="https://www.stockland.com.au/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="font-bold text-(--color-stockland)">
+                            Stockland
+                        </span>
+                    </a>{" "}
                     with 3 years of experience.
                 </p>
                 <div className="mt-12 flex gap-4">{/* Logos */}</div>

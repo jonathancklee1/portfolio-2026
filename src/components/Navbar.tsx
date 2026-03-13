@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <nav className="flex justify-between py-6 text-xl font-bold">
+        <nav className="flex justify-between bg-(--color-background) py-6 text-xl font-bold">
             <a href="/">
                 <span>JCKL</span>
             </a>

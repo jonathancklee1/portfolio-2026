@@ -5,7 +5,7 @@
     --color-background: #171c2a;
     --color-stockland: #2a6df6;
     --color-text: #e2e2e2;
-
+    --color-card: #2b354f;
     --width-container: 1600px;
 }
 
@@ -17,4 +17,16 @@ footer {
     color: var(--color-text);
     max-width: var(--width-container);
     margin-inline: auto;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+p {
+    /* text-wrap: pre */
+    text-wrap: "pretty";
+}
+
+section {
+    padding-block: 2rem;
 }
