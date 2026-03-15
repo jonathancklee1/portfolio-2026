@@ -10,7 +10,7 @@ function About() {
                 and developing clean UIs with a keen eye for detail.
             </p>
 
-            <h3 className="text-2xl font-bold">Experience & Education</h3>
+            <h3 className="mt-6 text-2xl font-bold">Experience & Education</h3>
             <ExperiencesBlock />
         </section>
     );

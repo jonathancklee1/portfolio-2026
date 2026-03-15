@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@theme {
+    --color-primary: #171c2a;
+    --color-secondary: #ffd000;
+    --color-background: #171c2a;
+    --color-stockland: #2a6df6;
+    --color-text: #e2e2e2;
+    --color-card: #2b354f;
+    --width-container: 1600px;
+}
 :root {
     --color-primary: #171c2a;
     --color-secondary: #ffd000;
@@ -8,7 +17,13 @@
     --color-card: #2b354f;
     --width-container: 1600px;
 }
-
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+}
+html:has(dialog[open]) {
+    overflow: hidden;
+}
 main,
 header,
 footer {
@@ -29,4 +44,12 @@ p {
 
 section {
     padding-block: 2rem;
+}
+
+button {
+    color: var(--color-text);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
 }

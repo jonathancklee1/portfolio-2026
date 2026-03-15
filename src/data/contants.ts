@@ -1,4 +1,6 @@
-export const EXPERIENCES = [
+import type { Experience } from "../utils/types";
+
+export const EXPERIENCES: Experience[] = [
     {
         title: "Junior Front-end Developer",
         company: "Stockland",

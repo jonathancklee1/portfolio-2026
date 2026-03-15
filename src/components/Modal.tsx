@@ -11,15 +11,19 @@ function Modal({
     return (
         <dialog
             id="dialog"
-            className="inset-1/2 w-full place-self-center rounded-lg bg-(--color-card) p-8 text-left text-(--color-text) backdrop:bg-black/20 backdrop:backdrop-blur-sm"
+            className="inset-1/2 w-full place-self-center rounded-2xl backdrop:bg-black/20 backdrop:backdrop-blur-sm"
             ref={dialogRef}
+            closedby="any"
         >
-            <form method="dialog">
-                {children}
-                <button type="submit" className="absolute top-4 right-3">
-                    <Close className="" width={30} height={30} />
-                </button>
-            </form>
+            {children}
+            <button className="absolute top-4 right-3" aria-label="close modal">
+                <Close
+                    className=""
+                    width={30}
+                    height={30}
+                    onClick={() => dialogRef.current?.close()}
+                />
+            </button>
         </dialog>
     );
 }
