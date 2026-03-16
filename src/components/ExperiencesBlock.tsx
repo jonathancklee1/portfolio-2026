@@ -17,12 +17,21 @@ function ExperiencesBlock() {
 
     return (
         <>
-            <ul className="flex flex-col gap-12">
+            <ul className="flex flex-col gap-20">
                 {EXPERIENCES.map((experience, index) => (
-                    <li key={index} className="relative flex gap-4">
-                        <div className="bg-secondary my-4 size-8 rounded-full"></div>
+                    <li
+                        key={index}
+                        className="relative flex justify-center gap-6"
+                    >
+                        <div className="size-16 shrink-0 overflow-hidden rounded-full">
+                            <img
+                                src={experience.image}
+                                alt={`logo of ${experience.company}`}
+                                className="aspect-square"
+                            />
+                        </div>
                         <div
-                            className="bg-card flex cursor-pointer flex-col gap-2 rounded-lg p-4"
+                            className="from-card border-tertiary to-tertiary/30 flex cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 backdrop-blur-3xl"
                             onClick={() => openModal(experience)}
                         >
                             <h3 className="text-xl font-bold">
@@ -45,12 +54,13 @@ function ExperiencesBlock() {
                     </li>
                 ))}
             </ul>
-            <Modal dialogRef={modalRef}>
+            <Modal dialogRef={modalRef} maxModalWidth="max-w-[500px] ">
                 {selectedExperience && (
                     <ExperiencesCard
                         description={selectedExperience.description}
                         company={selectedExperience.company}
                         title={selectedExperience.title}
+                        image={selectedExperience.image}
                     />
                 )}
             </Modal>

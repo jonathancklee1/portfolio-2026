@@ -3,4 +3,5 @@ export type Experience = {
     company: string;
     duration: string;
     description: string;
+    image: string;
 };

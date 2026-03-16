@@ -3,15 +3,17 @@ import Close from "../assets/icons/close.svg?react";
 
 function Modal({
     dialogRef,
+    maxModalWidth,
     children,
 }: {
     dialogRef: RefObject<HTMLDialogElement | null>;
+    maxModalWidth?: string;
     children: ReactNode;
 }) {
     return (
         <dialog
             id="dialog"
-            className="inset-1/2 w-full place-self-center rounded-2xl backdrop:bg-black/20 backdrop:backdrop-blur-sm"
+            className={`inset-1/2 w-[90%] place-self-center rounded-2xl backdrop:bg-black/20 backdrop:backdrop-blur-sm ${maxModalWidth || "max-w-md"}`}
             ref={dialogRef}
             closedby="any"
         >

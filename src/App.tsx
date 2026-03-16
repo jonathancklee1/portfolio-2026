@@ -4,7 +4,7 @@ import About from "./sections/About";
 
 function App() {
     return (
-        <div className="relative min-h-screen bg-(--color-background) px-6 text-(--color-text) md:px-12">
+        <div className="bg-background text-text relative min-h-screen px-6 md:px-12">
             <header className="sticky top-0 z-10">
                 <Navbar />
             </header>
