@@ -17,13 +17,15 @@ function ExperiencesBlock() {
 
     return (
         <>
-            <ul className="flex flex-col gap-20">
+            <ul className="flex flex-col gap-16">
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
                         className="relative flex justify-center gap-6"
                     >
-                        <div className="size-16 shrink-0 overflow-hidden rounded-full">
+                        <div
+                            className={`size-16 shrink-0 overflow-hidden rounded-full shadow-2xl ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
+                        >
                             <img
                                 src={experience.image}
                                 alt={`logo of ${experience.company}`}
@@ -31,7 +33,7 @@ function ExperiencesBlock() {
                             />
                         </div>
                         <div
-                            className="from-card border-tertiary to-tertiary/30 flex cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 backdrop-blur-3xl"
+                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} flex cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 backdrop-blur-3xl`}
                             onClick={() => openModal(experience)}
                         >
                             <h3 className="text-xl font-bold">
