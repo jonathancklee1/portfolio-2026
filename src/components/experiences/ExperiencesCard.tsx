@@ -1,4 +1,4 @@
-import type { Experience } from "../utils/types";
+import type { Experience } from "../../utils/types";
 
 function ExperiencesCard({
     title,

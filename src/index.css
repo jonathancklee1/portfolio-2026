@@ -57,3 +57,17 @@ button {
     border: none;
     cursor: pointer;
 }
+@view-transition {
+    navigation: auto;
+}
+.experience-card {
+    view-transition-name: experience-card;
+}
+
+::view-transition-group(experience-card) {
+    width: 100px;
+}
+
+::view-transition-group(*) {
+    animation-duration: 0.5s;
+}

@@ -3,22 +3,25 @@ import Close from "../assets/icons/close.svg?react";
 
 function Modal({
     dialogRef,
-    maxModalWidth,
+    additionalClasses,
     children,
 }: {
     dialogRef: RefObject<HTMLDialogElement | null>;
-    maxModalWidth?: string;
+    additionalClasses?: string;
     children: ReactNode;
 }) {
     return (
         <dialog
             id="dialog"
-            className={`inset-1/2 w-[90%] place-self-center rounded-2xl backdrop:bg-black/20 backdrop:backdrop-blur-sm ${maxModalWidth || "max-w-md"}`}
+            className={`inset-1/2 w-[90%] place-self-center rounded-2xl backdrop:bg-black/20 backdrop:backdrop-blur-sm ${additionalClasses}`}
             ref={dialogRef}
             closedby="any"
         >
             {children}
-            <button className="absolute top-4 right-3" aria-label="close modal">
+            <button
+                className="focus-visible:ring-primary absolute top-4 right-3 focus:border-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
+                aria-label="close modal"
+            >
                 <Close
                     className=""
                     width={30}
