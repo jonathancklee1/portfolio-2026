@@ -5,24 +5,27 @@ export const EXPERIENCES: Experience[] = [
         title: "Junior Front-end Developer",
         company: "Stockland",
         duration: "Feb 2025 - Present",
-        description:
+        description: [
             "Worked on improving the performance of the company's e-commerce platform, resulting in a 20% increase in page load speed.",
+        ],
         image: "src/assets/images/stockland-square.jpeg",
     },
     {
         title: "Graduate Website Developer",
         company: "Stockland",
         duration: "Oct 2022 - Feb 2025",
-        description:
+        description: [
             "Worked on improving the performance of the company's e-commerce platform, resulting in a 20% increase in page load speed.",
+        ],
         image: "src/assets/images/stockland-square.jpeg",
     },
     {
         title: "Information Systems Student ",
         company: "UNSW",
         duration: "Jan 2019 - Jun 2022",
-        description:
+        description: [
             "Worked on improving the performance of the company's e-commerce platform, resulting in a 20% increase in page load speed.",
+        ],
         image: "src/assets/images/unsw-square.png",
     },
 ];

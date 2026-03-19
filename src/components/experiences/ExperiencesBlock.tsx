@@ -5,17 +5,11 @@ import Modal from "../Modal";
 import ExperiencesCard from "./ExperiencesCard";
 import type { Experience } from "../../utils/types";
 import { isMobile } from "../../utils/isMobile";
-import { flushSync } from "react-dom";
+import ExperienceDetails from "./ExperienceDetails";
 
 function ExperiencesBlock({
-    isExpandedDetails,
-    setIsExpandedDetails,
-    selectedExperienceIndex,
     setSelectedExperienceIndex,
 }: {
-    isExpandedDetails: boolean;
-    setIsExpandedDetails: (value: boolean) => void;
-    selectedExperienceIndex: number | null;
     setSelectedExperienceIndex: (value: number | null) => void;
 }) {
     const modalRef = useRef<HTMLDialogElement>(null);
@@ -27,39 +21,18 @@ function ExperiencesBlock({
         modalRef.current?.showModal();
     };
     const timelineLineStyle =
-        "before:absolute before:top-15 before:left-7 before:h-35 before:w-2 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
+        "before:absolute before:top-15 lg:before:top-25 before:left-7 lg:before:left-12 before:h-35 lg:before:h-40 before:w-2 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
 
-    function startCardTransition() {
-        if (!document.startViewTransition) {
-            setIsExpandedDetails(true);
-            return;
-        }
-        if (isExpandedDetails) {
-            document.startViewTransition?.(() => {
-                console.log("Transition started");
-                flushSync(() => {
-                    setIsExpandedDetails(false);
-                });
-            });
-        }
-        document.startViewTransition?.(() => {
-            console.log("Transition started");
-            flushSync(() => {
-                setIsExpandedDetails(true);
-            });
-        });
-    }
-    console.log("isExpandedDetails", isExpandedDetails);
     return (
-        <>
-            <ul className="mx-auto flex w-fit shrink-0 flex-col lg:mx-0">
+        <div className="flex gap-12">
+            <ul className="mx-auto flex w-fit shrink-0 flex-col lg:mx-0 lg:basis-[50%]">
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
-                        className={`relative flex gap-6 pb-16 lg:justify-start ${index !== EXPERIENCES.length - 1 && timelineLineStyle}`}
+                        className={`relative flex gap-6 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-16"}`}
                     >
                         <div
-                            className={`size-16 shrink-0 overflow-hidden rounded-full shadow-2xl ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
+                            className={`size-16 shrink-0 overflow-hidden rounded-full shadow-2xl lg:size-28 ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
                         >
                             <img
                                 src={experience.image}
@@ -68,29 +41,30 @@ function ExperiencesBlock({
                             />
                         </div>
                         <div
-                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} flex cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 backdrop-blur-3xl ${isExpandedDetails && index === selectedExperienceIndex ? "invisible" : "visible"}`}
-                            style={{
-                                viewTransitionName: !isExpandedDetails
-                                    ? `experience-card-transition-${index}`
-                                    : "none",
-                            }}
+                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} flex w-max cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 transition-all hover:-translate-y-2.5 lg:gap-4 lg:p-6`}
                             onClick={() => {
                                 if (isMobile()) {
                                     openModal(experience);
                                 } else {
-                                    startCardTransition();
                                     setSelectedExperienceIndex(index);
+                                    setSelectedExperience(experience);
                                 }
                             }}
                         >
-                            <h3 className="text-xl font-bold">
-                                {experience.title}
-                            </h3>
-                            <p className="text-lg font-semibold">
-                                {experience.company}
-                            </p>
+                            <div className="flex flex-col gap-1">
+                                <h3 className="text-lg font-bold lg:text-xl">
+                                    {experience.title}
+                                </h3>
+                                <p className="text-lg font-semibold lg:text-xl">
+                                    {experience.company}
+                                </p>
+                            </div>
                             <div className="flex items-center justify-between">
-                                <p className="text-md">{experience.duration}</p>
+                                <div className="">
+                                    <p className="text-md lg:text-xl">
+                                        {experience.duration}
+                                    </p>
+                                </div>
                                 <ChevronRight
                                     className="lg:hidden"
                                     width={30}
@@ -101,20 +75,16 @@ function ExperiencesBlock({
                     </li>
                 ))}
             </ul>
+            <ExperienceDetails selectedExperience={selectedExperience} />
             <Modal
                 dialogRef={modalRef}
-                additionalClasses="max-w-[500px] lg:hidden"
+                additionalClasses="max-w-[600px] lg:hidden"
             >
                 {selectedExperience && (
-                    <ExperiencesCard
-                        description={selectedExperience.description}
-                        company={selectedExperience.company}
-                        title={selectedExperience.title}
-                        image={selectedExperience.image}
-                    />
+                    <ExperiencesCard selectedExperience={selectedExperience} />
                 )}
             </Modal>
-        </>
+        </div>
     );
 }
 

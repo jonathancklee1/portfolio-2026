@@ -8,19 +8,9 @@
     --color-unsw: #ffdc00;
     --color-text: #e2e2e2;
     --color-card: #2b354f;
-    --width-container: 1600px;
+    --width-container: 1200px;
 }
-/* :root {
-    --color-primary: #161440;
-    --color-secondary: #ffd000;
-    --color-tertiary: #ffffff;
-    --color-background: #161440;
-    --color-stockland: #2a6df6;
-    --color-unsw: #ffdc00;
-    --color-text: #e2e2e2;
-    --color-card: #2b354f;
-    --width-container: 1600px;
-} */
+
 html {
     scroll-behavior: smooth;
     background-color: var(--color-background);
@@ -36,6 +26,7 @@ footer {
     color: var(--color-text);
     max-width: var(--width-container);
     margin-inline: auto;
+    transition: all 0.3s ease;
 }
 
 a:hover {
@@ -70,4 +61,11 @@ button {
 
 ::view-transition-group(*) {
     animation-duration: 0.5s;
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }

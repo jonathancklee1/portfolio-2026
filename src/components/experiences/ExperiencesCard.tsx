@@ -1,11 +1,10 @@
 import type { Experience } from "../../utils/types";
 
 function ExperiencesCard({
-    title,
-    company,
-    description,
-    image,
-}: Omit<Experience, "duration">) {
+    selectedExperience: { title, description, company, image },
+}: {
+    selectedExperience: Omit<Experience, "duration">;
+}) {
     const cardClasses =
         company === "Stockland"
             ? "border-[color:var(--color-stockland)] bg-[color:var(--color-stockland)] shadow-[0_0_30px_var(--color-stockland)]"
@@ -18,7 +17,7 @@ function ExperiencesCard({
     return (
         <div className="from-card to-background/95 text-text flex flex-col gap-10 bg-linear-to-r p-4 pt-16">
             <div
-                className={`glass ${cardClasses} relative rounded-xl border-2 p-6 pt-16 backdrop-blur-md backdrop-filter`}
+                className={`glass ${cardClasses} relative rounded-xl border-2 p-6 pt-16`}
             >
                 {/* Company logo */}
                 <div
@@ -27,7 +26,13 @@ function ExperiencesCard({
                     <img src={image} alt={`logo of ${company}`} />
                 </div>
                 <h3 className="text-center text-2xl font-bold">{title}</h3>
-                <p className="text-md mt-6">{description}</p>
+                <ul className="text-md mt-6">
+                    {description.map((line, index) => (
+                        <li key={index} className="list-inside list-disc gap-2">
+                            {line}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
