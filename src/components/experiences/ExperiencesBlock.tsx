@@ -1,6 +1,6 @@
 import { EXPERIENCES } from "../../data/contants";
 import ChevronRight from "../../assets/icons/chevron-right.svg?react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "../Modal";
 import ExperiencesCard from "./ExperiencesCard";
 import type { Experience } from "../../utils/types";
@@ -25,11 +25,20 @@ function ExperiencesBlock() {
         "before:absolute before:top-15 lg:before:top-25 before:left-7 lg:before:left-12 before:h-35 lg:before:h-40 before:w-2 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
 
     //Gsap
-    gsap.registerPlugin(useGSAP);
     gsap.registerPlugin(Flip);
     const container = useRef(null);
-    const selectedExperienceRef = useRef(null);
+    const selectedExperienceRef = useRef<HTMLDivElement | null>(null);
+    const experienceCardRefs = useRef<Record<number, HTMLElement | null>>({});
+    function cleanFlipStyles(index: number | null) {
+        if (index === null) return;
+        const experienceCard = experienceCardRefs.current[index];
+        const selectedCard = selectedExperienceRef.current;
 
+        [experienceCard, selectedCard].forEach((el) => {
+            if (!el) return;
+            el.removeAttribute("style");
+        });
+    }
     function handleCardSelection(experience: Experience, index: number) {
         if (isMobile()) {
             openModal(experience);
@@ -38,19 +47,25 @@ function ExperiencesBlock() {
             setSelectedExperience(experience);
         }
     }
-    useLayoutEffect(() => {
-        if (selectedExperienceIndex === null) return;
-        const state = Flip.getState(
-            ".selected-card, .experience-card-" + selectedExperienceIndex,
-        );
-        Flip.from(state, {
-            duration: 0.6,
-            targets: `.experience-card-${selectedExperienceIndex}, .selected-card`,
-            ease: "power1.inOut",
-            scale: true,
-            // paused: true,
-        });
-    }, [selectedExperienceIndex]);
+
+    useGSAP(
+        () => {
+            if (selectedExperienceIndex === null) return;
+            const state = Flip.getState(
+                ".selected-card, .experience-card-" + selectedExperienceIndex,
+            );
+            Flip.from(state, {
+                duration: 0.6,
+                targets: `.experience-card-${selectedExperienceIndex}, .selected-card`,
+                ease: "power1.inOut",
+                scale: true,
+                // paused: true,
+                onComplete: () => cleanFlipStyles(selectedExperienceIndex),
+                onInterrupt: () => cleanFlipStyles(selectedExperienceIndex),
+            });
+        },
+        { dependencies: [selectedExperienceIndex], scope: container },
+    );
 
     return (
         <div className="flex gap-12" ref={container}>
@@ -72,6 +87,9 @@ function ExperiencesBlock() {
                         </div>
                         {/* Experience Card */}
                         <div
+                            ref={(el) => {
+                                experienceCardRefs.current[index] = el;
+                            }}
                             data-flip-id={`experience-card-${index}`}
                             className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} flex w-max cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 transition-transform hover:-translate-y-2.5 lg:gap-4 lg:p-6 ${
                                 selectedExperienceIndex === index && "invisible"
@@ -106,7 +124,7 @@ function ExperiencesBlock() {
             </ul>
             <div
                 data-flip-id={`experience-card-${selectedExperienceIndex}`}
-                className="selected-card"
+                className={`selected-card ${selectedExperienceIndex !== null ? "block" : "hidden"}`}
                 ref={selectedExperienceRef}
             >
                 <ExperienceDetails selectedExperience={selectedExperience} />
