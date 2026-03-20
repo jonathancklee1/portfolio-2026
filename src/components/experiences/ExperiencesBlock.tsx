@@ -51,6 +51,7 @@ function ExperiencesBlock() {
     useGSAP(
         () => {
             if (selectedExperienceIndex === null) return;
+
             const state = Flip.getState(
                 ".selected-card, .experience-card-" + selectedExperienceIndex,
             );
@@ -86,38 +87,42 @@ function ExperiencesBlock() {
                             />
                         </div>
                         {/* Experience Card */}
-                        <div
-                            ref={(el) => {
-                                experienceCardRefs.current[index] = el;
-                            }}
-                            data-flip-id={`experience-card-${index}`}
-                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} flex w-max cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 transition-transform hover:-translate-y-2.5 lg:gap-4 lg:p-6 ${
-                                selectedExperienceIndex === index && "invisible"
-                            }`}
-                            onClick={() =>
-                                handleCardSelection(experience, index)
-                            }
-                        >
-                            <div className="flex flex-col gap-1">
-                                <h3 className="text-lg font-bold lg:text-xl">
-                                    {experience.title}
-                                </h3>
-                                <p className="text-lg font-semibold lg:text-xl">
-                                    {experience.company}
-                                </p>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <div className="">
-                                    <p className="text-md lg:text-xl">
-                                        {experience.duration}
+                        <div className="relative">
+                            <div
+                                ref={(el) => {
+                                    experienceCardRefs.current[index] = el;
+                                }}
+                                data-flip-id={`experience-card-${index}`}
+                                className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} relative z-10 flex h-fit w-max cursor-pointer flex-col gap-2 rounded-3xl border bg-radial-[at_25%_25%] to-75% p-4 transition-transform hover:-translate-y-2.5 hover:shadow-2xl lg:gap-4 lg:p-6 ${
+                                    selectedExperienceIndex === index &&
+                                    "invisible"
+                                }`}
+                                onClick={() =>
+                                    handleCardSelection(experience, index)
+                                }
+                            >
+                                <div className="flex flex-col gap-1">
+                                    <h3 className="text-lg font-bold lg:text-xl">
+                                        {experience.title}
+                                    </h3>
+                                    <p className="text-lg font-semibold lg:text-xl">
+                                        {experience.company}
                                     </p>
                                 </div>
-                                <ChevronRight
-                                    className="lg:hidden"
-                                    width={30}
-                                    height={30}
-                                />
+                                <div className="flex items-center justify-between">
+                                    <div className="">
+                                        <p className="text-md lg:text-xl">
+                                            {experience.duration}
+                                        </p>
+                                    </div>
+                                    <ChevronRight
+                                        // className="lg:hidden"
+                                        width={30}
+                                        height={30}
+                                    />
+                                </div>
                             </div>
+                            <div className="absolute inset-0 h-full w-full rounded-3xl border-3 border-dashed border-white"></div>
                         </div>
                     </li>
                 ))}
