@@ -26,7 +26,6 @@ footer {
     color: var(--color-text);
     max-width: var(--width-container);
     margin-inline: auto;
-    transition: all 0.3s ease;
 }
 
 a:hover {

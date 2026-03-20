@@ -1,17 +1,18 @@
 import { EXPERIENCES } from "../../data/contants";
 import ChevronRight from "../../assets/icons/chevron-right.svg?react";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import Modal from "../Modal";
 import ExperiencesCard from "./ExperiencesCard";
 import type { Experience } from "../../utils/types";
 import { isMobile } from "../../utils/isMobile";
 import ExperienceDetails from "./ExperienceDetails";
-
-function ExperiencesBlock({
-    setSelectedExperienceIndex,
-}: {
-    setSelectedExperienceIndex: (value: number | null) => void;
-}) {
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Flip } from "gsap/Flip";
+function ExperiencesBlock() {
+    const [selectedExperienceIndex, setSelectedExperienceIndex] = useState<
+        number | null
+    >(null);
     const modalRef = useRef<HTMLDialogElement>(null);
     const [selectedExperience, setSelectedExperience] =
         useState<Experience | null>(null);
@@ -23,14 +24,43 @@ function ExperiencesBlock({
     const timelineLineStyle =
         "before:absolute before:top-15 lg:before:top-25 before:left-7 lg:before:left-12 before:h-35 lg:before:h-40 before:w-2 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
 
+    //Gsap
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(Flip);
+    const container = useRef(null);
+    const selectedExperienceRef = useRef(null);
+
+    function handleCardSelection(experience: Experience, index: number) {
+        if (isMobile()) {
+            openModal(experience);
+        } else {
+            setSelectedExperienceIndex(index);
+            setSelectedExperience(experience);
+        }
+    }
+    useLayoutEffect(() => {
+        if (selectedExperienceIndex === null) return;
+        const state = Flip.getState(
+            ".selected-card, .experience-card-" + selectedExperienceIndex,
+        );
+        Flip.from(state, {
+            duration: 0.6,
+            targets: `.experience-card-${selectedExperienceIndex}, .selected-card`,
+            ease: "power1.inOut",
+            scale: true,
+            // paused: true,
+        });
+    }, [selectedExperienceIndex]);
+
     return (
-        <div className="flex gap-12">
+        <div className="flex gap-12" ref={container}>
             <ul className="mx-auto flex w-fit shrink-0 flex-col lg:mx-0 lg:basis-[50%]">
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
                         className={`relative flex gap-6 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-16"}`}
                     >
+                        {/* Logo */}
                         <div
                             className={`size-16 shrink-0 overflow-hidden rounded-full shadow-2xl lg:size-28 ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
                         >
@@ -40,16 +70,15 @@ function ExperiencesBlock({
                                 className="aspect-square"
                             />
                         </div>
+                        {/* Experience Card */}
                         <div
-                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} flex w-max cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 transition-all hover:-translate-y-2.5 lg:gap-4 lg:p-6`}
-                            onClick={() => {
-                                if (isMobile()) {
-                                    openModal(experience);
-                                } else {
-                                    setSelectedExperienceIndex(index);
-                                    setSelectedExperience(experience);
-                                }
-                            }}
+                            data-flip-id={`experience-card-${index}`}
+                            className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} flex w-max cursor-pointer flex-col gap-2 rounded-lg border bg-radial-[at_25%_25%] to-75% p-4 transition-transform hover:-translate-y-2.5 lg:gap-4 lg:p-6 ${
+                                selectedExperienceIndex === index && "invisible"
+                            }`}
+                            onClick={() =>
+                                handleCardSelection(experience, index)
+                            }
                         >
                             <div className="flex flex-col gap-1">
                                 <h3 className="text-lg font-bold lg:text-xl">
@@ -75,7 +104,13 @@ function ExperiencesBlock({
                     </li>
                 ))}
             </ul>
-            <ExperienceDetails selectedExperience={selectedExperience} />
+            <div
+                data-flip-id={`experience-card-${selectedExperienceIndex}`}
+                className="selected-card"
+                ref={selectedExperienceRef}
+            >
+                <ExperienceDetails selectedExperience={selectedExperience} />
+            </div>
             <Modal
                 dialogRef={modalRef}
                 additionalClasses="max-w-[600px] lg:hidden"
