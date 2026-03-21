@@ -9,6 +9,7 @@ import ExperienceDetails from "./ExperienceDetails";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
+import Pill from "../Pill";
 function ExperiencesBlock() {
     const [selectedExperienceIndex, setSelectedExperienceIndex] = useState<
         number | null
@@ -88,7 +89,7 @@ function ExperiencesBlock() {
                 ".selected-card, .experience-card-" + selectedExperienceIndex,
             );
             Flip.from(state, {
-                duration: 0.6,
+                duration: 0.5,
                 targets: `.experience-card-${selectedExperienceIndex}, .selected-card`,
                 ease: "power1.inOut",
                 scale: true,
@@ -110,13 +111,13 @@ function ExperiencesBlock() {
                                 gsap.fromTo(
                                     card,
                                     {
-                                        duration: 1,
+                                        duration: 0.6,
                                         opacity: 0,
-                                        translateX: 150,
+                                        translateX: 50,
                                         ease: "power1.inOut",
                                     },
                                     {
-                                        duration: 1,
+                                        duration: 0.6,
                                         opacity: 1,
                                         translateX: 0,
                                         ease: "power1.inOut",
@@ -169,9 +170,22 @@ function ExperiencesBlock() {
                                     <h3 className="text-lg font-bold lg:text-xl">
                                         {experience.title}
                                     </h3>
-                                    <p className="text-lg font-semibold lg:text-xl">
-                                        {experience.company}
-                                    </p>
+                                    <Pill
+                                        background={
+                                            experience.company === "Stockland"
+                                                ? "bg-stockland"
+                                                : "bg-unsw"
+                                        }
+                                        colour={
+                                            experience.company === "Stockland"
+                                                ? "white"
+                                                : "black"
+                                        }
+                                    >
+                                        <p className="text-md">
+                                            {experience.company}
+                                        </p>
+                                    </Pill>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <div className="">
@@ -191,12 +205,21 @@ function ExperiencesBlock() {
                     </li>
                 ))}
             </ul>
-            <div
-                data-flip-id={`experience-card-${selectedExperienceIndex}`}
-                className={`selected-card ${selectedExperienceIndex !== null ? "block" : "hidden"}`}
-                ref={selectedExperienceRef}
-            >
-                <ExperienceDetails selectedExperience={selectedExperience} />
+            <div className="relative hidden w-full lg:block">
+                <div
+                    data-flip-id={`experience-card-${selectedExperienceIndex}`}
+                    className={`selected-card ${selectedExperienceIndex !== null ? "block" : "hidden"}`}
+                    ref={selectedExperienceRef}
+                >
+                    <ExperienceDetails
+                        selectedExperience={selectedExperience}
+                    />
+                </div>
+                {selectedExperienceIndex === null && (
+                    <div className="absolute inset-0 grid h-full w-full place-items-center rounded-3xl border-2 border-dashed border-white text-center font-bold">
+                        <p>Click on my experiences to view more details</p>
+                    </div>
+                )}
             </div>
             <Modal
                 dialogRef={modalRef}
