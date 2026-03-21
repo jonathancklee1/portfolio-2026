@@ -50,6 +50,38 @@ function ExperiencesBlock() {
 
     useGSAP(
         () => {
+            //Hover animation
+            // Add hover animations to all experience cards
+            Object.values(experienceCardRefs.current).forEach((card) => {
+                if (!card) return;
+
+                const handleMouseEnter = () => {
+                    gsap.to(card, {
+                        y: -10,
+                        duration: 0.3,
+                        ease: "ease.out",
+                    });
+                };
+
+                const handleMouseLeave = () => {
+                    gsap.to(card, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: "ease.out",
+                    });
+                };
+
+                card.addEventListener("mouseenter", handleMouseEnter);
+                card.addEventListener("mouseleave", handleMouseLeave);
+
+                // Cleanup function to remove event listeners
+                return () => {
+                    card.removeEventListener("mouseenter", handleMouseEnter);
+                    card.removeEventListener("mouseleave", handleMouseLeave);
+                };
+            });
+
+            //Flip animation
             if (selectedExperienceIndex === null) return;
 
             const state = Flip.getState(
@@ -61,6 +93,40 @@ function ExperiencesBlock() {
                 ease: "power1.inOut",
                 scale: true,
                 // paused: true,
+                onStart: () => {
+                    cleanFlipStyles(selectedExperienceIndex);
+                    experienceCardRefs.current[
+                        selectedExperienceIndex
+                    ]?.classList.add("opacity-0");
+
+                    Object.entries(experienceCardRefs.current).forEach(
+                        ([index, card]) => {
+                            const cardIndex = parseInt(index);
+                            if (
+                                card &&
+                                card.classList.contains("opacity-0") &&
+                                cardIndex !== selectedExperienceIndex
+                            ) {
+                                gsap.fromTo(
+                                    card,
+                                    {
+                                        duration: 1,
+                                        opacity: 0,
+                                        translateX: 150,
+                                        ease: "power1.inOut",
+                                    },
+                                    {
+                                        duration: 1,
+                                        opacity: 1,
+                                        translateX: 0,
+                                        ease: "power1.inOut",
+                                    },
+                                );
+                                card.classList.remove("opacity-0");
+                            }
+                        },
+                    );
+                },
                 onComplete: () => cleanFlipStyles(selectedExperienceIndex),
                 onInterrupt: () => cleanFlipStyles(selectedExperienceIndex),
             });
@@ -93,11 +159,9 @@ function ExperiencesBlock() {
                                     experienceCardRefs.current[index] = el;
                                 }}
                                 data-flip-id={`experience-card-${index}`}
-                                className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} relative z-10 flex h-fit w-max cursor-pointer flex-col gap-2 rounded-3xl border bg-radial-[at_25%_25%] to-75% p-4 transition-transform hover:-translate-y-2.5 hover:shadow-2xl lg:gap-4 lg:p-6 ${
-                                    selectedExperienceIndex === index &&
-                                    "invisible"
-                                }`}
+                                className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} $ relative z-10 flex h-fit w-max cursor-pointer flex-col gap-2 rounded-3xl border-2 bg-radial-[at_25%_25%] to-75% p-4 lg:gap-4 lg:p-6`}
                                 onClick={() =>
+                                    //
                                     handleCardSelection(experience, index)
                                 }
                             >
