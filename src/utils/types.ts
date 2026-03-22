@@ -1,7 +1,9 @@
 export type Experience = {
     title: string;
-    company: string;
+    company: Company;
     duration: string;
     description: string[];
     image: string;
 };
+
+type Company = "Stockland" | "UNSW";

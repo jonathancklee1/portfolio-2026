@@ -51,6 +51,7 @@ function ExperiencesBlock() {
 
     useGSAP(
         () => {
+            if (isMobile()) return;
             //Hover animation
             // Add hover animations to all experience cards
             Object.values(experienceCardRefs.current).forEach((card) => {

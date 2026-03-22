@@ -26,11 +26,16 @@ function ExperiencesCard({
                     <img src={image} alt={`logo of ${company}`} />
                 </div>
                 <h3 className="text-center text-2xl font-bold">{title}</h3>
-                <ul className="text-md mt-6">
+                <ul className="text-md mt-6 flex flex-col gap-4">
                     {description.map((line, index) => (
-                        <li key={index} className="list-inside list-disc gap-2">
-                            {line}
-                        </li>
+                        <div
+                            className={`rounded-2xl bg-black/50 p-4 shadow-2xl backdrop-blur-2xl ${company === "UNSW" && "text-text"} border-2`}
+                            key={index}
+                        >
+                            <li className="list-inside list-disc gap-2">
+                                {line}
+                            </li>
+                        </div>
                     ))}
                 </ul>
             </div>
