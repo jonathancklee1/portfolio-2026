@@ -78,7 +78,10 @@
 @view-transition {
     navigation: auto;
 }
-
+::view-transition-group(link) {
+    animation-duration: 0.3s; /
+    animation-timing-function: ease-in-out;
+}
 @keyframes open {
     from {
         opacity: 0;

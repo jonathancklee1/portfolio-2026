@@ -45,7 +45,7 @@ function Navbar() {
                         <div
                             className="bg-neon-green h-1 w-full rounded-full"
                             style={{
-                                viewTransitionName: `link-home`,
+                                viewTransitionName: "link", // Changed to same name
                             }}
                         ></div>
                     )}
@@ -65,7 +65,7 @@ function Navbar() {
                                 <div
                                     className="bg-neon-green h-1 w-full rounded-full"
                                     style={{
-                                        viewTransitionName: `link-${link}`,
+                                        viewTransitionName: "link", // Changed to same name
                                     }}
                                 ></div>
                             )}
