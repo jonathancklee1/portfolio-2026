@@ -23,7 +23,7 @@ function ExperienceDetails({
                         className="rounded-2xl bg-black/50 p-8 shadow-2xl backdrop-blur-2xl"
                         key={index}
                     >
-                        <li className="list-inside list-disc gap-2">{line}</li>
+                        <li className="pl-4">{line}</li>
                     </div>
                 ))}
             </ul>

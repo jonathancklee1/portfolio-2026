@@ -8,76 +8,75 @@
     --color-unsw: #ffdc00;
     --color-text: #e2e2e2;
     --color-card: #2b354f;
+    --color-neon-green: #39ff14;
     --width-container: 1200px;
 }
 
-html {
-    scroll-behavior: smooth;
-    background-color: var(--color-background);
-}
-html:has(dialog[open]) {
-    overflow: hidden;
-}
-main,
-header,
-footer {
-    font-family: "Monospace", sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text);
-    max-width: var(--width-container);
-    margin-inline: auto;
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        background-color: var(--color-background);
+    }
+    html:has(dialog[open]) {
+        overflow: hidden;
+    }
+    main,
+    header,
+    footer {
+        font-family: "Monospace", sans-serif;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        max-width: var(--width-container);
+        margin-inline: auto;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    p {
+        /* text-wrap: pre */
+        text-wrap: "pretty";
+    }
+    section {
+        padding-block: 2rem;
+    }
+    button {
+        color: var(--color-text);
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+    }
+    dialog {
+        transition:
+            display 0.75s allow-discrete,
+            overlay 0.75s allow-discrete;
+
+        animation: close 0.75s forwards;
+        &[open] {
+            animation: open 0.75s forwards;
+        }
+    }
+    li::marker {
+        color: var(--color-neon-green);
+        font-weight: bold;
+        content: ">";
+    }
 }
 
-a:hover {
-    text-decoration: underline;
-}
-p {
-    /* text-wrap: pre */
-    text-wrap: "pretty";
+@layer components {
+    .experience-card {
+        view-transition-name: experience-card;
+    }
+    .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
 }
 
-section {
-    padding-block: 2rem;
-}
-
-button {
-    color: var(--color-text);
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: none;
-    cursor: pointer;
-}
 @view-transition {
     navigation: auto;
-}
-.experience-card {
-    view-transition-name: experience-card;
-}
-
-::view-transition-group(experience-card) {
-    width: 100px;
-}
-
-::view-transition-group(*) {
-    animation-duration: 0.5s;
-}
-
-.glassmorphism {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-dialog {
-    transition:
-        display 0.75s allow-discrete,
-        overlay 0.75s allow-discrete;
-
-    animation: close 0.75s forwards;
-    &[open] {
-        animation: open 0.75s forwards;
-    }
 }
 
 @keyframes open {

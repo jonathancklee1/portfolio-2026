@@ -29,12 +29,10 @@ function ExperiencesCard({
                 <ul className="text-md mt-6 flex flex-col gap-4">
                     {description.map((line, index) => (
                         <div
-                            className={`rounded-2xl bg-black/50 p-4 shadow-2xl backdrop-blur-2xl ${company === "UNSW" && "text-text"} border-2`}
+                            className={`rounded-2xl bg-black/50 p-4 px-6 shadow-2xl backdrop-blur-2xl ${company === "UNSW" && "text-text"} border-2`}
                             key={index}
                         >
-                            <li className="list-inside list-disc gap-2">
-                                {line}
-                            </li>
+                            <li className="pl-2">{line}</li>
                         </div>
                     ))}
                 </ul>

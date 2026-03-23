@@ -60,16 +60,16 @@ function ExperiencesBlock() {
                 const handleMouseEnter = () => {
                     gsap.to(card, {
                         y: -10,
-                        duration: 0.3,
-                        ease: "ease.out",
+                        duration: 0.4,
+                        ease: "power4",
                     });
                 };
 
                 const handleMouseLeave = () => {
                     gsap.to(card, {
                         y: 0,
-                        duration: 0.3,
-                        ease: "ease.out",
+                        duration: 0.4,
+                        ease: "power4",
                     });
                 };
 
@@ -167,7 +167,7 @@ function ExperiencesBlock() {
                                     handleCardSelection(experience, index)
                                 }
                             >
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-2">
                                     <h3 className="text-lg font-bold lg:text-xl">
                                         {experience.title}
                                     </h3>

@@ -33,3 +33,4 @@ export const EXPERIENCES: Experience[] = [
         image: "src/assets/images/unsw-square.png",
     },
 ];
+export const PAGE_LINKS = ["about", "projects", "tech", "contact"];

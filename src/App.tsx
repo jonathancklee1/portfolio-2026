@@ -5,9 +5,7 @@ import About from "./sections/About";
 function App() {
     return (
         <div className="bg-background text-text relative min-h-screen px-6 md:px-12">
-            <header className="sticky top-0 z-10">
-                <Navbar />
-            </header>
+            <Navbar />
             <main>
                 <Hero />
                 <About />
