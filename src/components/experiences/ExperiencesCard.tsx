@@ -32,7 +32,7 @@ function ExperiencesCard({
                             className={`rounded-2xl bg-black/50 p-4 px-6 shadow-2xl backdrop-blur-2xl ${company === "UNSW" && "text-text"} border-2`}
                             key={index}
                         >
-                            <li className="pl-2">{line}</li>
+                            <li className="code-arrow pl-2">{line}</li>
                         </div>
                     ))}
                 </ul>

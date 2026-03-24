@@ -61,7 +61,7 @@ function ExperiencesBlock() {
                     gsap.to(card, {
                         y: -10,
                         duration: 0.4,
-                        ease: "power4",
+                        ease: "power4.inOut",
                     });
                 };
 
@@ -69,7 +69,7 @@ function ExperiencesBlock() {
                     gsap.to(card, {
                         y: 0,
                         duration: 0.4,
-                        ease: "power4",
+                        ease: "power4.inOut",
                     });
                 };
 
@@ -142,7 +142,7 @@ function ExperiencesBlock() {
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
-                        className={`relative flex gap-6 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-16"}`}
+                        className={`code-arrow relative flex gap-6 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-16"}`}
                     >
                         {/* Logo */}
                         <div

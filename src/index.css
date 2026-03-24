@@ -28,6 +28,7 @@
         color: var(--color-text);
         max-width: var(--width-container);
         margin-inline: auto;
+        font-size: 1rem;
     }
     a:hover {
         text-decoration: none;
@@ -56,7 +57,7 @@
             animation: open 0.75s forwards;
         }
     }
-    li::marker {
+    li.code-arrow::marker {
         color: var(--color-neon-green);
         font-weight: bold;
         content: ">";
@@ -79,9 +80,10 @@
     navigation: auto;
 }
 ::view-transition-group(link) {
-    animation-duration: 0.3s; /
+    animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
 }
+
 @keyframes open {
     from {
         opacity: 0;

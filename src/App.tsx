@@ -4,7 +4,7 @@ import About from "./sections/About";
 
 function App() {
     return (
-        <div className="bg-background text-text relative min-h-screen px-6 md:px-12">
+        <div className="bg-background text-text relative min-h-screen overflow-clip px-6 md:px-12">
             <Navbar />
             <main>
                 <Hero />
