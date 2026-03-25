@@ -18,7 +18,6 @@ export const EXPERIENCES: Experience[] = [
         description: [
             "Contributed to the development of major frontend components for the customer facing website, leading to a 60% increase in website enquiries and 2M new users.",
             "Developed and maintained an evolving front-end codebase using Typescript, VueJs, TailwindCSS, Liquidjs and Storybook.",
-            "Collaborated in an Agile environment and participated in Agile ceremonies to present and deliver features from wireframe designs out of Figma.",
         ],
         image: "src/assets/images/stockland-square.jpeg",
     },

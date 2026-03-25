@@ -9,6 +9,7 @@
     --color-text: #e2e2e2;
     --color-card: #2b354f;
     --color-neon-green: #39ff14;
+    --color-green-live: rgb(166, 227, 161);
     --width-container: 1200px;
 }
 
@@ -34,8 +35,7 @@
         text-decoration: none;
     }
     p {
-        /* text-wrap: pre */
-        text-wrap: "pretty";
+        text-wrap: pretty;
     }
     section {
         padding-block: 2rem;
@@ -74,6 +74,15 @@
         border-radius: 10px;
         border: 2px solid rgba(255, 255, 255, 0.2);
     }
+
+    .green-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: var(--color-green-live);
+        box-shadow: var(--color-green-live) 0px 0px 8px 0px;
+        animation: boxShadowPulse 1.5s infinite;
+    }
 }
 
 @view-transition {
@@ -83,7 +92,17 @@
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
 }
-
+@keyframes boxShadowPulse {
+    0% {
+        box-shadow: var(--color-green-live) 0px 0px 8px 0px;
+    }
+    50% {
+        box-shadow: var(--color-green-live) 0px 0px 20px 0px;
+    }
+    100% {
+        box-shadow: var(--color-green-live) 0px 0px 8px 0px;
+    }
+}
 @keyframes open {
     from {
         opacity: 0;

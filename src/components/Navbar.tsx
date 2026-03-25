@@ -41,13 +41,13 @@ function Navbar() {
         >
             <nav
                 ref={navRef}
-                className={`flex items-center justify-between py-4 font-bold transition-all duration-300 ease-in-out lg:px-3 lg:text-xl ${isScrolled && "glassmorphism rounded-full border-none px-5 shadow-2xl backdrop-blur-xl"}`}
+                className={`lg:text-md flex items-center justify-between py-4 font-bold transition-all duration-300 ease-in-out lg:px-6 ${isScrolled && "glassmorphism rounded-full border-none px-5 shadow-2xl backdrop-blur-xl"}`}
             >
                 <a href="#" onClick={() => handleLinkClick("home")}>
                     <span>JCKL</span>
                     {activeLink === "home" && (
                         <div
-                            className="bg-neon-green h-1 w-full rounded-full"
+                            className="bg-neon-green h-0.5 w-full rounded-full"
                             style={{
                                 viewTransitionName: "link", // Changed to same name
                             }}

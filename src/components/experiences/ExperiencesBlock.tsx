@@ -23,7 +23,7 @@ function ExperiencesBlock() {
         modalRef.current?.showModal();
     };
     const timelineLineStyle =
-        "before:absolute before:top-15 lg:before:top-25 before:left-7 lg:before:left-12 before:h-35 lg:before:h-40 before:w-2 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
+        "before:absolute before:top-13 lg:before:top-25 before:left-6 lg:before:left-12 before:h-38 lg:before:h-40 before:w-1.5 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
 
     //Gsap
     gsap.registerPlugin(Flip);
@@ -142,11 +142,11 @@ function ExperiencesBlock() {
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
-                        className={`code-arrow relative flex gap-6 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-16"}`}
+                        className={`code-arrow relative flex gap-3 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-12"}`}
                     >
                         {/* Logo */}
                         <div
-                            className={`size-16 shrink-0 overflow-hidden rounded-full shadow-2xl lg:size-28 ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
+                            className={`size-14 shrink-0 overflow-hidden rounded-full shadow-2xl lg:size-28 ${experience.company === "Stockland" ? "shadow-stockland bg-stockland" : "shadow-unsw bg-unsw"}`}
                         >
                             <img
                                 src={experience.image}
@@ -161,7 +161,7 @@ function ExperiencesBlock() {
                                     experienceCardRefs.current[index] = el;
                                 }}
                                 data-flip-id={`experience-card-${index}`}
-                                className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} $ relative z-10 flex h-fit w-max cursor-pointer flex-col gap-2 rounded-3xl border-2 bg-radial-[at_25%_25%] to-75% p-4 lg:gap-4 lg:p-6`}
+                                className={`from-card border-tertiary ${experience.company === "Stockland" ? "to-stockland/50" : "to-unsw/50"} experience-card-${index} relative z-10 flex h-fit w-fit cursor-pointer flex-col gap-2 rounded-3xl border-2 bg-radial-[at_25%_25%] to-75% p-4 lg:gap-4 lg:p-6`}
                                 onClick={() =>
                                     //
                                     handleCardSelection(experience, index)
