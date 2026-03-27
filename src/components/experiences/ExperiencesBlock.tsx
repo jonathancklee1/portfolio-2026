@@ -22,8 +22,6 @@ function ExperiencesBlock() {
         setSelectedExperience(experience);
         modalRef.current?.showModal();
     };
-    const timelineLineStyle =
-        "before:absolute before:top-13 lg:before:top-25 before:left-6 lg:before:left-12 before:h-38 lg:before:h-40 before:w-1.5 lg:before:w-3 before:bg-white before:shadow-xl before:content-[''] before:shadow-white";
 
     //Gsap
     gsap.registerPlugin(Flip);
@@ -142,7 +140,7 @@ function ExperiencesBlock() {
                 {EXPERIENCES.map((experience, index) => (
                     <li
                         key={index}
-                        className={`code-arrow relative flex gap-3 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && timelineLineStyle + " pb-12"}`}
+                        className={`code-arrow relative flex gap-3 lg:justify-start lg:gap-12 ${index !== EXPERIENCES.length - 1 && "timeline-line" + " pb-12"}`}
                     >
                         {/* Logo */}
                         <div

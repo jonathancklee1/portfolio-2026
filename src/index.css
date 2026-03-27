@@ -38,7 +38,7 @@
         text-wrap: pretty;
     }
     section {
-        padding-block: 2rem;
+        padding-block: 4rem;
     }
     button {
         color: var(--color-text);
@@ -83,6 +83,10 @@
         box-shadow: var(--color-green-live) 0px 0px 8px 0px;
         animation: boxShadowPulse 1.5s infinite;
     }
+
+    .timeline-line {
+        @apply before:absolute before:top-13 before:left-6 before:h-41 before:w-1.5 before:bg-white before:shadow-xl before:shadow-white before:content-[''] lg:before:top-25 lg:before:left-12 lg:before:h-40 lg:before:w-3;
+    }
 }
 
 @view-transition {
@@ -122,5 +126,13 @@
     to {
         opacity: 0;
         transform: translateY(10px);
+    }
+}
+@keyframes infinite-scroll {
+    0%: {
+        transform: translateX(0);
+    }
+    100%: {
+        transform: "translateX(-100%)";
     }
 }

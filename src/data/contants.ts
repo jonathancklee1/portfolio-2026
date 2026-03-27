@@ -1,4 +1,4 @@
-import type { Experience } from "../utils/types";
+import type { Experience, Song } from "../utils/types";
 
 export const EXPERIENCES: Experience[] = [
     {
@@ -32,4 +32,22 @@ export const EXPERIENCES: Experience[] = [
         image: "src/assets/images/unsw-square.png",
     },
 ];
-export const PAGE_LINKS = ["about", "projects", "tech", "contact"];
+export const PAGE_LINKS: string[] = ["about", "projects", "tech", "contact"];
+
+export const SONGS: Song[] = [
+    {
+        track: "End of Beginning",
+        artist: "Djo",
+        coverImage: "src/assets/images/end-of-beginning-square.png",
+    },
+    {
+        track: "Snooze",
+        artist: "SZA",
+        coverImage: "src/assets/images/snooze-square.png",
+    },
+    {
+        track: "Sweater Weather",
+        artist: "The Neighbourhood",
+        coverImage: "src/assets/images/sweater-weather-square.png",
+    },
+];

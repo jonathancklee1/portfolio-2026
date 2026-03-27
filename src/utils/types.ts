@@ -7,3 +7,9 @@ export type Experience = {
 };
 
 type Company = "Stockland" | "UNSW";
+
+export type Song = {
+    track: string;
+    artist: string;
+    coverImage: string;
+};

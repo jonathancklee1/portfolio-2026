@@ -1,6 +1,6 @@
 import ExperiencesBlock from "../components/experiences/ExperiencesBlock";
 import SectionHeader from "../components/SectionHeader";
-import SpotifyBlock from "../components/SpotifyBlock";
+import MusicBlock from "../components/MusicBlock";
 import Quotes from "../assets/icons/quotes.svg?react";
 
 function About() {
@@ -27,17 +27,16 @@ function About() {
                     {/* <p className="text-center text-3xl">- Me, 2026</p> */}
                 </div>
                 <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-stretch">
-                    <div className="glassmorphism flex w-fit items-center gap-4 rounded-2xl p-4 lg:p-6">
+                    <div className="glassmorphism flex w-fit items-center gap-4 rounded-2xl p-4 lg:px-6">
                         <div className="p-2">
                             <div className="green-dot"></div>
                         </div>
-                        <p className="text-lg font-bold lg:text-xl">
+                        <p className="text-md font-bold lg:text-lg">
                             Currently learning 3D web development
                         </p>
                     </div>
-                    <div className="glassmorphism flex w-full max-w-[500px] items-center gap-2 rounded-2xl p-4 lg:p-6">
-                        <SpotifyBlock />
-                    </div>
+
+                    <MusicBlock />
                 </div>
             </div>
 
