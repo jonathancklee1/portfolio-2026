@@ -17,7 +17,7 @@ function Hero() {
                 char.addEventListener("mouseenter", () => {
                     gsap.to(char, {
                         y: -10,
-                        color: "#007bff",
+                        color: "var(--color-secondary)",
                         duration: 0.3,
                         ease: "power2.out",
                     });
@@ -56,7 +56,7 @@ function Hero() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <span className="text-stockland translate-y-1 p-1 font-bold transition-all hover:rounded-lg hover:bg-[#2473f1] hover:text-white">
+                        <span className="text-stockland translate-y-1 p-1 font-bold transition-all hover:rounded-lg hover:bg-[#286bd7] hover:text-white">
                             Stockland
                         </span>
                     </a>{" "}

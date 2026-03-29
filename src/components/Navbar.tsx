@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { PAGE_LINKS } from "../data/contants";
 import { flushSync } from "react-dom";
-import MobileMenuButton from "./MobileMenuButton";
-import MenuDrawer from "./MenuDrawer";
+import MobileMenuButton from "./navigation/MobileMenuButton";
+import MenuDrawer from "./navigation/MenuDrawer";
 
 function Navbar() {
     const navRef = useRef<HTMLElement>(null);
@@ -47,7 +47,7 @@ function Navbar() {
                     <span>JCKL</span>
                     {activeLink === "home" && (
                         <div
-                            className="bg-neon-green h-0.5 w-full rounded-full"
+                            className="bg-secondary h-0.5 w-full rounded-full"
                             style={{
                                 viewTransitionName: "link", // Changed to same name
                             }}
@@ -61,14 +61,14 @@ function Navbar() {
                             href={`#${link}`}
                             onClick={() => handleLinkClick(link)}
                             key={link}
-                            className={`${activeLink === link ? "text-white" : "text-gray-300"} hover:text-neon-green transition-colors duration-300 ease-in-out`}
+                            className={`${activeLink === link ? "text-white" : "text-gray-300"} hover:text-secondary transition-colors duration-300 ease-in-out`}
                         >
                             <span className="font-semibold">
                                 {link.charAt(0).toUpperCase() + link.slice(1)}
                             </span>
                             {activeLink === link && (
                                 <div
-                                    className="bg-neon-green h-0.5 w-full rounded-full"
+                                    className="bg-secondary h-0.5 w-full rounded-full"
                                     style={{
                                         viewTransitionName: "link",
                                     }}

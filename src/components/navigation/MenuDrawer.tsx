@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { PAGE_LINKS } from "../data/contants";
+import { PAGE_LINKS } from "../../data/contants";
 import gsap from "gsap";
 function MenuDrawer({
     isMenuOpen,

@@ -1,4 +1,4 @@
-import type { Experience, Song } from "../utils/types";
+import type { Experience, Project, Song } from "../utils/types";
 
 export const EXPERIENCES: Experience[] = [
     {
@@ -49,5 +49,23 @@ export const SONGS: Song[] = [
         track: "Sweater Weather",
         artist: "The Neighbourhood",
         coverImage: "src/assets/images/sweater-weather-square.png",
+    },
+];
+
+export const PROJECTS: Project[] = [
+    {
+        name: "Stockland Website",
+    },
+    {
+        name: "Mynance",
+    },
+    {
+        name: "Radial Gradient Generator",
+    },
+    {
+        name: "PocketTrump",
+    },
+    {
+        name: "Watch List",
     },
 ];

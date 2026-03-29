@@ -13,3 +13,7 @@ export type Song = {
     artist: string;
     coverImage: string;
 };
+
+export type Project = {
+    name: string;
+};
