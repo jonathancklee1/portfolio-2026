@@ -16,4 +16,8 @@ export type Song = {
 
 export type Project = {
     name: string;
+    description: string;
+    image: string;
+    ghLink?: string;
+    liveLink?: string;
 };

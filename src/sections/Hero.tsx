@@ -62,15 +62,15 @@ function Hero() {
                     </a>{" "}
                     with 3 years of experience.
                 </p>
-                <div className="mt-6 flex items-center gap-4 lg:mt-10">
+                <div className="mt-6 flex items-center gap-6 lg:mt-10">
                     <a
                         href="https://github.com/jonathancklee1"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <Github
-                            height={"32px"}
-                            width={"32px"}
+                            height={"38px"}
+                            width={"38px"}
                             className="fill-secondary transition-colors hover:fill-white"
                         />
                     </a>
@@ -80,8 +80,8 @@ function Hero() {
                         rel="noopener noreferrer"
                     >
                         <Linkedin
-                            height={"36px"}
-                            width={"36px"}
+                            height={"46px"}
+                            width={"46px"}
                             className="fill-secondary transition-colors hover:fill-[#0077B5]"
                         />
                     </a>
@@ -91,8 +91,8 @@ function Hero() {
                         rel="noopener noreferrer"
                     >
                         <Email
-                            height={"32px"}
-                            width={"32px"}
+                            height={"38px"}
+                            width={"38px"}
                             className="fill-secondary transition-colors hover:fill-[#EA4335]"
                         />
                     </a>
