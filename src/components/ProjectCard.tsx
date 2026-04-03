@@ -1,32 +1,107 @@
 import type { Project } from "../utils/types";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { isMobile } from "../utils/isMobile";
+import { useRef } from "react";
+import Button from "./Button";
+import External from "../assets/icons/external.svg?react";
 
 function ProjectCard({ project: project }: { project: Project }) {
+    gsap.registerPlugin(useGSAP);
+    useGSAP(() => {
+        if (!isMobile()) {
+            gsap.to(".card-overlay ", {
+                // x: 0,
+                // opacity: 1,
+                duration: 0.3,
+                ease: "power4.inOut",
+                stagger: 0.1,
+            });
+        }
+    }, []);
+
+    const cardRef = useRef<HTMLDivElement>(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
+    const cardDescRef = useRef<HTMLDivElement>(null);
+
+    // useGSAP handles cleanup automatically
+    const { contextSafe } = useGSAP({ scope: cardRef });
+
+    // Use contextSafe for events that happen after the initial render
+    const onEnter = contextSafe(() => {
+        if (!isMobile()) {
+            const tl = gsap.timeline();
+            tl.to(overlayRef.current, {
+                height: "100%",
+                duration: 0.3,
+                overwrite: true,
+            });
+            tl.to(cardDescRef.current, {
+                opacity: 1,
+                height: "auto",
+                // duration: 0.3,
+                duration: 0.2,
+                overwrite: true,
+            });
+        }
+    });
+
+    const onLeave = contextSafe(() => {
+        if (!isMobile()) {
+            const tl = gsap.timeline();
+            tl.to(cardDescRef.current, {
+                opacity: 0,
+                height: "0",
+                duration: 0,
+                overwrite: true,
+            });
+            tl.to(overlayRef.current, {
+                height: "auto",
+                duration: 0.2,
+                overwrite: true,
+            });
+        }
+    });
     return (
-        <div className="relative h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-white shadow-2xl">
+        <div
+            className="relative h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-white shadow-2xl"
+            ref={cardRef}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave}
+        >
             <img
                 src={project.image}
                 alt={project.name}
-                className="h-full w-full object-cover hover:scale-[1.05]"
+                className="h-full w-full object-cover"
             />
-            <div className="to-card absolute right-0 bottom-0 left-0 bg-linear-to-b from-transparent p-4 pt-8">
-                <h3 className="text-xl font-bold">{project.name}</h3>
+            <div
+                className="card-overlay to-card absolute right-0 bottom-0 left-0 flex h-auto flex-col items-start justify-between bg-linear-to-b from-transparent p-4 pt-8"
+                ref={overlayRef}
+            >
+                <div className="overflow-hidden">
+                    <h3 className="text-xl font-bold">{project.name}</h3>
+                    <p className="card-description lg:h-0" ref={cardDescRef}>
+                        {project.description}
+                    </p>
+                </div>
                 <div className="mt-4 flex gap-4">
-                    <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-secondary text-background rounded-3xl px-4 py-2 font-bold"
-                    >
-                        Live Demo
-                    </a>
-                    <a
-                        href={project.ghLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border-secondary text-secondary rounded-3xl border bg-transparent px-4 py-2 font-bold"
-                    >
-                        Github
-                    </a>
+                    <Button
+                        text="Live Demo"
+                        variant="primary"
+                        link={project.liveLink}
+                        icon={
+                            <External
+                                fill={"var(--color-background)"}
+                                width="20px"
+                                height="20px"
+                            />
+                        }
+                    />
+                    <Button
+                        text="GitHub"
+                        variant="secondary"
+                        link={project.ghLink}
+                    />
                 </div>
             </div>
         </div>
