@@ -11,8 +11,6 @@ function ProjectCard({ project: project }: { project: Project }) {
     useGSAP(() => {
         if (!isMobile()) {
             gsap.to(".card-overlay ", {
-                // x: 0,
-                // opacity: 1,
                 duration: 0.3,
                 ease: "power4.inOut",
                 stagger: 0.1,
@@ -24,12 +22,15 @@ function ProjectCard({ project: project }: { project: Project }) {
     const overlayRef = useRef<HTMLDivElement>(null);
     const cardDescRef = useRef<HTMLDivElement>(null);
 
-    // useGSAP handles cleanup automatically
     const { contextSafe } = useGSAP({ scope: cardRef });
 
-    // Use contextSafe for events that happen after the initial render
     const onEnter = contextSafe(() => {
         if (!isMobile()) {
+            gsap.to(cardRef.current, {
+                scale: 1.02,
+                duration: 0.2,
+                ease: "easeInOut",
+            });
             const tl = gsap.timeline();
             tl.to(overlayRef.current, {
                 height: "100%",
@@ -39,7 +40,6 @@ function ProjectCard({ project: project }: { project: Project }) {
             tl.to(cardDescRef.current, {
                 opacity: 1,
                 height: "auto",
-                // duration: 0.3,
                 duration: 0.2,
                 overwrite: true,
             });
@@ -48,6 +48,11 @@ function ProjectCard({ project: project }: { project: Project }) {
 
     const onLeave = contextSafe(() => {
         if (!isMobile()) {
+            gsap.to(cardRef.current, {
+                scale: 1,
+                duration: 0.2,
+                ease: "easeInOut",
+            });
             const tl = gsap.timeline();
             tl.to(cardDescRef.current, {
                 opacity: 0,
@@ -75,7 +80,7 @@ function ProjectCard({ project: project }: { project: Project }) {
                 className="h-full w-full object-cover"
             />
             <div
-                className="card-overlay to-card absolute right-0 bottom-0 left-0 flex h-auto flex-col items-start justify-between bg-linear-to-b from-transparent p-4 pt-8"
+                className="card-overlay to-card/60 absolute right-0 bottom-0 left-0 flex h-auto flex-col items-start justify-between bg-linear-to-b from-transparent to-50% p-4 pt-8"
                 ref={overlayRef}
             >
                 <div className="overflow-hidden">

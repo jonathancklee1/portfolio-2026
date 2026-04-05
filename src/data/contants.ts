@@ -57,14 +57,14 @@ export const PROJECTS: Project[] = [
         name: "Stockland Website",
         description:
             "A customer facing website for Stockland’s residential business, built using VueJs, TailwindCSS and Liquidjs.",
-        image: "src/assets/images/stockland-website-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         liveLink: "https://www.stockland.com.au/residential",
     },
     {
         name: "Mynance",
         description:
             "A personal finance management app built using React, Typescript and Material UI.",
-        image: "src/assets/images/mynance-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/mynance",
         liveLink: "https://mynance.netlify.app/",
     },
@@ -72,28 +72,28 @@ export const PROJECTS: Project[] = [
         name: "Radial Gradient Generator",
         description:
             "A web app that generates radial gradients, built using React and TailwindCSS.",
-        image: "src/assets/images/radial-gradient-generator-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/radial-gradient-generator",
     },
     {
         name: "PocketTrump",
         description:
             "A mobile app for managing and tracking political news and updates.",
-        image: "src/assets/images/pockettrump-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/pockettrump",
     },
     {
         name: "Watch List",
         description:
             "A web app for tracking and managing movies and TV shows to watch, built using React and TailwindCSS.",
-        image: "src/assets/images/watch-list-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/watch-list",
     },
     {
         name: "Dark Mode Blog",
         description:
             "A blog website with dark mode feature, built using React and TailwindCSS.",
-        image: "src/assets/images/dark-mode-blog-square.png",
+        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/dark-mode-blog",
     },
 ];

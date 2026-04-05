@@ -21,3 +21,8 @@ export type Project = {
     ghLink?: string;
     liveLink?: string;
 };
+
+export interface TechRow {
+    title: string;
+    technologies: string[];
+}

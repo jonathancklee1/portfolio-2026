@@ -39,6 +39,7 @@
     }
     section {
         padding-block: 4rem;
+        scroll-margin-top: 2rem;
     }
     button {
         color: var(--color-text);
