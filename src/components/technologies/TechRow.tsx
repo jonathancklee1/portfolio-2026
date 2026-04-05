@@ -7,10 +7,10 @@ export function TechRow({ title, technologies }: TechRow) {
     return (
         <div>
             <h3 className="text-xl font-bold">{title}</h3>
-            <div className="mt-2 flex max-w-full flex-wrap gap-2">
+            <div className="mt-4 flex max-w-full flex-wrap gap-6">
                 {technologies.map((tech) => (
                     //Render Canvas
-                    <CanvasComponent key={tech} height="60px" width="60px">
+                    <CanvasComponent key={tech.name} height="60px" width="60px">
                         <LogoMesh />
                         <ambientLight intensity={0.8} />
                         <pointLight position={[5, 5, 5]} />

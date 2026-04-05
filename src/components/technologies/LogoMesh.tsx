@@ -1,10 +1,8 @@
 import { useLoader } from "@react-three/fiber";
-import { useRef } from "react";
 import * as THREE from "three";
 import { SVGLoader } from "three/examples/jsm/Addons.js";
 
 function LogoMesh() {
-    const meshRef = useRef<THREE.Mesh>(null);
     const texture = useLoader(SVGLoader, "src/assets/icons/linkedin.svg");
 
     const shapes = texture.paths.flatMap((path) => {
@@ -13,10 +11,9 @@ function LogoMesh() {
         return pathShapes.map((shape) => ({ shape, color: path.color }));
     });
     return (
-        <mesh ref={meshRef}>
+        <group scale={[1, -1, 1]}>
             {shapes.map((item, index) => (
                 <mesh key={index}>
-                    {/* Use extrudeGeometry for 3D depth or shapeGeometry for 2D */}
                     <extrudeGeometry
                         args={[item.shape, { depth: 2, bevelEnabled: true }]}
                     />
@@ -26,7 +23,7 @@ function LogoMesh() {
                     />
                 </mesh>
             ))}
-        </mesh>
+        </group>
     );
 }
 

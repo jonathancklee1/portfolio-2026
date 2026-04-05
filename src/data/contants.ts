@@ -1,4 +1,9 @@
-import type { Experience, Project, Song } from "../utils/types";
+import type {
+    Experience,
+    Project,
+    Song,
+    TECHNOLOGY_CATEGORY,
+} from "../utils/types";
 
 export const EXPERIENCES: Experience[] = [
     {
@@ -95,5 +100,93 @@ export const PROJECTS: Project[] = [
             "A blog website with dark mode feature, built using React and TailwindCSS.",
         image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
         ghLink: "https://github.com/connorjamesm/dark-mode-blog",
+    },
+];
+
+export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
+    {
+        items: [
+            {
+                name: "HTML5",
+                icon: "src/assets/icons/html5.svg",
+            },
+            {
+                name: "CSS3",
+                icon: "src/assets/icons/css3.svg",
+            },
+            {
+                name: "Typescript",
+                icon: "src/assets/icons/typescript.svg",
+            },
+            {
+                name: "Javascript",
+                icon: "src/assets/icons/javascript.svg",
+            },
+        ],
+        category: "Languages",
+    },
+    {
+        items: [
+            {
+                name: "ReactJS",
+                icon: "src/assets/icons/reactjs.svg",
+            },
+            {
+                name: "Vue",
+                icon: "src/assets/icons/vue.svg",
+            },
+        ],
+        category: "Frameworks",
+    },
+    {
+        items: [
+            {
+                name: "Zustand",
+                icon: "src/assets/icons/zustand.svg",
+            },
+            {
+                name: "VuePinia",
+                icon: "src/assets/icons/vuepinia.svg",
+            },
+            {
+                name: "Graphql/Apollo",
+                icon: "src/assets/icons/graphql-apollo.svg",
+            },
+            {
+                name: "React Query",
+                icon: "src/assets/icons/react-query.svg",
+            },
+        ],
+        category: "State & Data",
+    },
+    {
+        items: [
+            {
+                name: "TailwindCSS",
+                icon: "src/assets/icons/tailwindcss.svg",
+            },
+            {
+                name: "MaterialUI",
+                icon: "src/assets/icons/materialui.svg",
+            },
+            {
+                name: "StoryBook",
+                icon: "src/assets/icons/storybook.svg",
+            },
+        ],
+        category: "UI & Styling",
+    },
+    {
+        items: [
+            {
+                name: "Git",
+                icon: "src/assets/icons/git.svg",
+            },
+            {
+                name: "Optimizely",
+                icon: "src/assets/icons/optimizely.svg",
+            },
+        ],
+        category: "Other",
     },
 ];
