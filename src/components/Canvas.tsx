@@ -18,9 +18,7 @@ function CanvasComponent({
                 width: width,
             }}
         >
-            <Canvas {...props} camera={{ position: [30, 0, 0] }}>
-                {children}
-            </Canvas>
+            <Canvas {...props}>{children}</Canvas>
         </div>
     );
 }

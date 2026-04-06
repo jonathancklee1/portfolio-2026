@@ -33,7 +33,7 @@ function MenuDrawer({
 
     return (
         <ul
-            className={`absolute top-[calc(100%+1rem)] right-0 z-50 flex flex-col items-end gap-4 lg:hidden`}
+            className={`absolute top-[calc(100%+1rem)] right-0 z-50 flex flex-col items-end gap-4 transition-all ${isMenuOpen ? "translate-x-0" : "translate-x-[10%]"} lg:hidden`}
         >
             {PAGE_LINKS.map((link) => (
                 <li

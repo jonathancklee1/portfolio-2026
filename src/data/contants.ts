@@ -115,12 +115,12 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
                 icon: "src/assets/icons/css3.svg",
             },
             {
-                name: "Typescript",
-                icon: "src/assets/icons/typescript.svg",
-            },
-            {
                 name: "Javascript",
                 icon: "src/assets/icons/javascript.svg",
+            },
+            {
+                name: "Typescript",
+                icon: "src/assets/icons/typescript.svg",
             },
         ],
         category: "Languages",
@@ -146,11 +146,11 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
             },
             {
                 name: "VuePinia",
-                icon: "src/assets/icons/vuepinia.svg",
+                icon: "src/assets/icons/pinia.svg",
             },
             {
-                name: "Graphql/Apollo",
-                icon: "src/assets/icons/graphql-apollo.svg",
+                name: "Graphql",
+                icon: "src/assets/icons/graphql.svg",
             },
             {
                 name: "React Query",
@@ -163,7 +163,7 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "TailwindCSS",
-                icon: "src/assets/icons/tailwindcss.svg",
+                icon: "src/assets/icons/tailwind.svg",
             },
             {
                 name: "MaterialUI",
@@ -179,8 +179,8 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
     {
         items: [
             {
-                name: "Git",
-                icon: "src/assets/icons/git.svg",
+                name: "Github",
+                icon: "src/assets/icons/github.svg",
             },
             {
                 name: "Optimizely",

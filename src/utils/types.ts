@@ -25,6 +25,7 @@ export type Project = {
 export interface TechRow {
     title: string;
     technologies: TECHNOLOGY[];
+    pillColour: string;
 }
 export type CATEGORY =
     | "Languages"
