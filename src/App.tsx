@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Technologies from "./sections/Technologies";
+import Contact from "./sections/Contact";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <About />
                 <Projects />
                 <Technologies />
+                <Contact />
             </main>
         </div>
     );

@@ -5,15 +5,15 @@ function Technologies() {
     function getPillColour(index: number) {
         switch (index) {
             case 0:
-                return "bg-blue-500";
+                return "bg-[#c32f27]";
             case 1:
-                return "bg-purple-700";
+                return "bg-[#e2711d]";
             case 2:
-                return "bg-green-700";
+                return "bg-[#218380]";
             case 3:
-                return "bg-yellow-700";
+                return "bg-[#0582ca]";
             case 4:
-                return "bg-red-700";
+                return "bg-[#6a4c93]";
             default:
                 return "bg-gray-500";
         }
@@ -21,7 +21,7 @@ function Technologies() {
     return (
         <section className="flex flex-col gap-8 lg:gap-12" id="tech">
             <SectionHeader text="Technologies I used" />
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-12 text-white">
                 {TECH_STACK.map((techCategory, index) => (
                     <TechRow
                         key={techCategory.category}

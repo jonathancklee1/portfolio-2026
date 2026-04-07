@@ -46,7 +46,7 @@ function Hero() {
                         Jonathan Lee
                     </span>
                 </h1>
-                <h2 className="mt-2 text-3xl font-bold text-(--color-secondary) md:text-3xl">
+                <h2 className="text-secondary mt-2 text-3xl font-bold md:text-3xl">
                     Front-end Developer
                 </h2>
                 <p className="mt-4 max-w-125 text-(--color-text-secondary) md:text-2xl">
