@@ -18,14 +18,14 @@ export function TechRow({ title, technologies, pillColour }: TechRow) {
                             width="60px"
                         >
                             <LogoMesh svgPath={tech.icon} />
-                            <ambientLight intensity={0.8} />
-                            <pointLight position={[5, 5, 5]} />
+                            <ambientLight intensity={2.5} />
+
                             <OrbitControls
                                 // autoRotate={true}
                                 makeDefault
                                 minPolarAngle={Math.PI / 2}
                                 maxPolarAngle={Math.PI / 2}
-                                // enableZoom={false}
+                                enableZoom={false}
                             />
                             <PerspectiveCamera
                                 makeDefault

@@ -61,7 +61,10 @@ function LogoMesh({
                             { depth: 2, bevelEnabled: true, bevelSize: 0.5 },
                         ]}
                     />
-                    <meshStandardMaterial color="red" side={THREE.DoubleSide} />
+                    <meshStandardMaterial
+                        color={item.color}
+                        side={THREE.DoubleSide}
+                    />
                 </mesh>
             ))}
         </group>

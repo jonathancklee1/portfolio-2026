@@ -16,6 +16,7 @@ function CanvasComponent({
             style={{
                 height: height,
                 width: width,
+                cursor: "grab",
             }}
         >
             <Canvas {...props}>{children}</Canvas>
