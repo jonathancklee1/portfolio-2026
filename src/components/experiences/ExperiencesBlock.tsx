@@ -63,6 +63,16 @@ function ExperiencesBlock() {
             });
             if (isMobile()) return;
 
+            gsap.from(".experience-details", {
+                autoAlpha: 0,
+                x: 40,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".experience-details",
+                    start: "top 90%",
+                },
+            });
             Object.values(experienceCardRefs.current).forEach((card) => {
                 if (!card) return;
 
@@ -201,11 +211,7 @@ function ExperiencesBlock() {
                                             {experience.duration}
                                         </p>
                                     </div>
-                                    <ChevronRight
-                                        // className="lg:hidden"
-                                        width={30}
-                                        height={30}
-                                    />
+                                    <ChevronRight width={30} height={30} />
                                 </div>
                             </div>
                             <div className="absolute inset-0 h-full w-full rounded-3xl border-3 border-dashed border-white"></div>
@@ -213,7 +219,7 @@ function ExperiencesBlock() {
                     </li>
                 ))}
             </ul>
-            <div className="relative hidden w-full lg:block">
+            <div className="experience-details relative hidden w-full lg:block">
                 <div
                     data-flip-id={`experience-card-${selectedExperienceIndex}`}
                     className={`selected-card ${selectedExperienceIndex !== null ? "block" : "hidden"}`}

@@ -18,7 +18,7 @@ function Contact() {
             tl.from(contactSectionRef.current, {
                 autoAlpha: 0,
                 y: 40,
-                duration: 1,
+                duration: 0.5,
                 ease: "power3.out",
             })
                 .from(
@@ -26,7 +26,7 @@ function Contact() {
                     {
                         autoAlpha: 0,
                         y: 40,
-                        duration: 1,
+                        duration: 0.5,
                         ease: "power3.out",
                     },
                     "<",
@@ -34,7 +34,7 @@ function Contact() {
                 .from(".cta-button", {
                     autoAlpha: 0,
                     y: 40,
-                    duration: 1,
+                    duration: 0.5,
                     ease: "power3.out",
                     stagger: 0.2,
                 });

@@ -13,7 +13,7 @@ function SectionHeader({ text }: { text: string }) {
                 ease: "power4.out",
                 scrollTrigger: {
                     trigger: headerRef.current,
-                    start: "top 90%",
+                    start: "top 95%",
                 },
             });
         },
