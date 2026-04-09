@@ -7,7 +7,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 export default function MusicBlock() {
     return (
-        <div className="glassmorphism flex w-full max-w-[600px] items-center gap-2 rounded-2xl p-4 lg:px-6">
+        <div className="music-block glassmorphism flex w-full max-w-150 items-center gap-2 rounded-2xl p-4 lg:px-6">
             <div className="flex w-25 min-w-0 flex-1 flex-col gap-2">
                 <div className="flex items-center gap-2">
                     <div

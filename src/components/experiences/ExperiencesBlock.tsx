@@ -49,9 +49,20 @@ function ExperiencesBlock() {
 
     useGSAP(
         () => {
+            gsap.utils.toArray<Element>(".experience-card").forEach((card) => {
+                gsap.from(card, {
+                    autoAlpha: 0,
+                    x: 40,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                    },
+                });
+            });
             if (isMobile()) return;
-            //Hover animation
-            // Add hover animations to all experience cards
+
             Object.values(experienceCardRefs.current).forEach((card) => {
                 if (!card) return;
 
@@ -81,7 +92,6 @@ function ExperiencesBlock() {
                 };
             });
 
-            //Flip animation
             if (selectedExperienceIndex === null) return;
 
             const state = Flip.getState(
@@ -92,7 +102,6 @@ function ExperiencesBlock() {
                 targets: `.experience-card-${selectedExperienceIndex}, .selected-card`,
                 ease: "power1.inOut",
                 scale: true,
-                // paused: true,
                 onStart: () => {
                     cleanFlipStyles(selectedExperienceIndex);
                     experienceCardRefs.current[
@@ -153,7 +162,7 @@ function ExperiencesBlock() {
                             />
                         </div>
                         {/* Experience Card */}
-                        <div className="relative">
+                        <div className="experience-card relative">
                             <div
                                 ref={(el) => {
                                     experienceCardRefs.current[index] = el;

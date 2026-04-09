@@ -4,8 +4,11 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Technologies from "./sections/Technologies";
 import Contact from "./sections/Contact";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 function App() {
+    gsap.registerPlugin(ScrollTrigger);
     return (
         <div className="bg-background text-text relative min-h-screen overflow-clip px-6 md:px-12">
             <Navbar />

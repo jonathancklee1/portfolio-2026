@@ -7,20 +7,10 @@ import Button from "./Button";
 import External from "../assets/icons/external.svg?react";
 
 function ProjectCard({ project: project }: { project: Project }) {
-    gsap.registerPlugin(useGSAP);
-    useGSAP(() => {
-        if (!isMobile()) {
-            gsap.to(".card-overlay ", {
-                duration: 0.3,
-                ease: "power4.inOut",
-                stagger: 0.1,
-            });
-        }
-    }, []);
-
     const cardRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
     const cardDescRef = useRef<HTMLDivElement>(null);
+    gsap.registerPlugin(useGSAP);
 
     const { contextSafe } = useGSAP({ scope: cardRef });
 
@@ -67,9 +57,39 @@ function ProjectCard({ project: project }: { project: Project }) {
             });
         }
     });
+    useGSAP(
+        () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: cardRef.current,
+                    start: "top 90%",
+                },
+            });
+            tl.from(cardRef.current, {
+                autoAlpha: 0,
+                y: 40,
+                duration: 0.5,
+                ease: "power3.out",
+            })
+                .from(".live-button-wrapper", {
+                    autoAlpha: 0,
+                    y: 40,
+                    duration: 0.2,
+                    ease: "power3.in",
+                })
+                .from(".gh-button-wrapper", {
+                    autoAlpha: 0,
+                    y: 40,
+                    duration: 0.2,
+                    ease: "power3.in",
+                });
+        },
+        { scope: cardRef },
+    );
+
     return (
         <div
-            className="relative h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-white shadow-2xl"
+            className="project-card relative h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-white shadow-2xl"
             ref={cardRef}
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
@@ -90,23 +110,27 @@ function ProjectCard({ project: project }: { project: Project }) {
                     </p>
                 </div>
                 <div className="mt-4 flex gap-4">
-                    <Button
-                        text="Live Demo"
-                        variant="primary"
-                        link={project.liveLink}
-                        icon={
-                            <External
-                                fill={"var(--color-background)"}
-                                width="20px"
-                                height="20px"
-                            />
-                        }
-                    />
-                    <Button
-                        text="GitHub"
-                        variant="secondary"
-                        link={project.ghLink}
-                    />
+                    <div className="live-button-wrapper">
+                        <Button
+                            text="Live Demo"
+                            variant="primary"
+                            link={project.liveLink}
+                            icon={
+                                <External
+                                    fill={"var(--color-background)"}
+                                    width="20px"
+                                    height="20px"
+                                />
+                            }
+                        />
+                    </div>
+                    <div className="gh-button-wrapper">
+                        <Button
+                            text="GitHub"
+                            variant="secondary"
+                            link={project.ghLink}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

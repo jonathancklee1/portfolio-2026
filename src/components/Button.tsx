@@ -3,11 +3,13 @@ function Button({
     variant,
     link,
     icon,
+    extraClasses,
 }: {
     text: string;
     variant: "primary" | "secondary";
     link?: string;
     icon?: React.ReactNode;
+    extraClasses?: string;
 }) {
     return (
         <a
@@ -18,7 +20,7 @@ function Button({
                 variant === "primary"
                     ? "bg-secondary text-background hover:text-secondary border-secondary border hover:bg-transparent"
                     : "border-secondary text-secondary hover:bg-secondary hover:text-background border bg-transparent"
-            }`}
+            } ${extraClasses || ""}`}
         >
             {text}
             {icon && (

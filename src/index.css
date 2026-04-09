@@ -88,6 +88,9 @@
     .timeline-line {
         @apply before:absolute before:top-13 before:left-6 before:h-41 before:w-1.5 before:bg-white before:shadow-xl before:shadow-white before:content-[''] lg:before:top-25 lg:before:left-12 lg:before:h-40 lg:before:w-3;
     }
+    .name-split div {
+        will-change: transform, opacity;
+    }
 }
 
 @view-transition {
