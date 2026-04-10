@@ -5,6 +5,36 @@ import type {
     TECHNOLOGY_CATEGORY,
 } from "../utils/types";
 
+// Images
+import stocklandSquare from "../assets/images/stockland-square.jpeg";
+import unswSquare from "../assets/images/unsw-square.png";
+import endOfBeginningSquare from "../assets/images/end-of-beginning-square.png";
+import snoozeSquare from "../assets/images/snooze-square.png";
+import sweatersWeatherSquare from "../assets/images/sweater-weather-square.png";
+import stocklandHomepage from "../assets/images/stockland-homepage.png";
+import mynance from "../assets/images/mynance.png";
+import radialGradientGenerator from "../assets/images/radial-gradient-generator.png";
+import pocketTrump from "../assets/images/pocket-trump.png";
+import darkModeBlog from "../assets/images/dark-mode-blog.png";
+import watchList from "../assets/images/watch-list.png";
+
+// Icons
+import html5Icon from "../assets/icons/html5.svg";
+import css3Icon from "../assets/icons/css3.svg";
+import javascriptIcon from "../assets/icons/javascript.svg";
+import typescriptIcon from "../assets/icons/typescript.svg";
+import reactjsIcon from "../assets/icons/reactjs.svg";
+import vueIcon from "../assets/icons/vue.svg";
+import zustandIcon from "../assets/icons/zustand.svg";
+import piniaIcon from "../assets/icons/pinia.svg";
+import graphqlIcon from "../assets/icons/graphql.svg";
+import reactQueryIcon from "../assets/icons/react-query.svg";
+import tailwindIcon from "../assets/icons/tailwind.svg";
+import materialuiIcon from "../assets/icons/materialui.svg";
+import storybookIcon from "../assets/icons/storybook.svg";
+import githubIcon from "../assets/icons/github.svg";
+import optimizelyIcon from "../assets/icons/optimizely.svg";
+
 export const EXPERIENCES: Experience[] = [
     {
         title: "Junior Front-end Developer",
@@ -14,7 +44,7 @@ export const EXPERIENCES: Experience[] = [
             "Contributed to developing frontend components for one of Stockland’s Data Science & Insights internal web application.",
             "Developed and maintained an evolving front-end codebase using React, Typescript, Material Ui, Graphql and Storybook.",
         ],
-        image: "src/assets/images/stockland-square.jpeg",
+        image: stocklandSquare,
     },
     {
         title: "Graduate Website Developer",
@@ -24,7 +54,7 @@ export const EXPERIENCES: Experience[] = [
             "Contributed to the development of major frontend components for the customer facing website, leading to a 60% increase in website enquiries and 2M new users.",
             "Developed and maintained an evolving front-end codebase using Typescript, VueJs, TailwindCSS, Liquidjs and Storybook.",
         ],
-        image: "src/assets/images/stockland-square.jpeg",
+        image: stocklandSquare,
     },
     {
         title: "Information Systems Student ",
@@ -34,7 +64,7 @@ export const EXPERIENCES: Experience[] = [
             "Completed a Bachelor of Information Systems with a Distinction.",
             "Relevant coursework: Software Development, Data Structures & Algorithms, Database Systems, Computer Networks and Security.",
         ],
-        image: "src/assets/images/unsw-square.png",
+        image: unswSquare,
     },
 ];
 export const PAGE_LINKS: string[] = ["about", "projects", "tech", "contact"];
@@ -43,17 +73,17 @@ export const SONGS: Song[] = [
     {
         track: "End of Beginning",
         artist: "Djo",
-        coverImage: "src/assets/images/end-of-beginning-square.png",
+        coverImage: endOfBeginningSquare,
     },
     {
         track: "Snooze",
         artist: "SZA",
-        coverImage: "src/assets/images/snooze-square.png",
+        coverImage: snoozeSquare,
     },
     {
         track: "Sweater Weather",
         artist: "The Neighbourhood",
-        coverImage: "src/assets/images/sweater-weather-square.png",
+        coverImage: sweatersWeatherSquare,
     },
 ];
 
@@ -62,14 +92,14 @@ export const PROJECTS: Project[] = [
         name: "Stockland Website",
         description:
             "A customer facing website for Stockland’s residential business, built using Liquidjs, TailwindCSS,Typescript and Vue. Collaborated with a team of developers to build several main frontend components, including the navigation bar, hero sections and article pages",
-        image: "src/assets/images/stockland-homepage.png",
+        image: stocklandHomepage,
         liveLink: "https://www.stockland.com.au",
     },
     {
         name: "Mynance",
         description:
             "A personal finance management web app built using React, Typescript and Material UI. Implemented features such as personal finance visualisation, budget setting and investment tracking with integrated third-party APIs.",
-        image: "src/assets/images/mynance.png",
+        image: mynance,
         ghLink: "https://github.com/jonathancklee1/mynance",
         liveLink: "https://jonathancklee1.github.io/mynance/",
     },
@@ -77,7 +107,7 @@ export const PROJECTS: Project[] = [
         name: "Radial Gradient Generator",
         description:
             "A web app that generates radial gradients, built using React, DaisyUi, TailwindCSS and Zustand. Users can customize the gradient by adjusting parameters such as colors, size and position, and can easily copy the generated CSS code for use in their own projects.",
-        image: "src/assets/images/radial-gradient-generator.png",
+        image: radialGradientGenerator,
         ghLink: "https://github.com/jonathancklee1/radial-gradient-generator",
         liveLink: "https://jonathancklee1.github.io/radial-gradient-generator/",
     },
@@ -85,7 +115,7 @@ export const PROJECTS: Project[] = [
         name: "PocketTrump",
         description:
             "A web game based on the popular card game Top Trumps with the theme of Pokemon. Built using React, Tailwind, HeadlessUI, GSAP and Zustand. Implemented game logic, animations and state management to simulate a real card game.",
-        image: "src/assets/images/pocket-trump.png",
+        image: pocketTrump,
         ghLink: "https://github.com/jonathancklee1/pocket-trump",
         liveLink: "https://jonathancklee1.github.io/pocket-trump/",
     },
@@ -93,14 +123,14 @@ export const PROJECTS: Project[] = [
         name: "Dark Mode Blog",
         description:
             "A small 'dark-mode' blog website built using React, TailwindCSS and GSAP. One of my first projects that I built to learn GSAP animations. Implemented scroll-triggered animations and a dark mode toggle to enhance user experience.",
-        image: "src/assets/images/dark-mode-blog.png",
+        image: darkModeBlog,
         ghLink: "https://github.com/jonathancklee1/dark-mode-website",
         liveLink: "https://www.darkmodeinfo.dev/",
     },
     {
         name: "New Watch List",
         description: "Work in progress!",
-        image: "src/assets/images/watch-list.png",
+        image: watchList,
     },
 ];
 
@@ -109,19 +139,19 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "HTML5",
-                icon: "src/assets/icons/html5.svg",
+                icon: html5Icon,
             },
             {
                 name: "CSS3",
-                icon: "src/assets/icons/css3.svg",
+                icon: css3Icon,
             },
             {
                 name: "Javascript",
-                icon: "src/assets/icons/javascript.svg",
+                icon: javascriptIcon,
             },
             {
                 name: "Typescript",
-                icon: "src/assets/icons/typescript.svg",
+                icon: typescriptIcon,
             },
         ],
         category: "Languages",
@@ -130,11 +160,11 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "ReactJS",
-                icon: "src/assets/icons/reactjs.svg",
+                icon: reactjsIcon,
             },
             {
                 name: "Vue",
-                icon: "src/assets/icons/vue.svg",
+                icon: vueIcon,
             },
         ],
         category: "Frameworks",
@@ -143,19 +173,19 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "Zustand",
-                icon: "src/assets/icons/zustand.svg",
+                icon: zustandIcon,
             },
             {
                 name: "VuePinia",
-                icon: "src/assets/icons/pinia.svg",
+                icon: piniaIcon,
             },
             {
                 name: "Graphql",
-                icon: "src/assets/icons/graphql.svg",
+                icon: graphqlIcon,
             },
             {
                 name: "React Query",
-                icon: "src/assets/icons/react-query.svg",
+                icon: reactQueryIcon,
             },
         ],
         category: "State & Data",
@@ -164,15 +194,15 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "TailwindCSS",
-                icon: "src/assets/icons/tailwind.svg",
+                icon: tailwindIcon,
             },
             {
                 name: "MaterialUI",
-                icon: "src/assets/icons/materialui.svg",
+                icon: materialuiIcon,
             },
             {
                 name: "StoryBook",
-                icon: "src/assets/icons/storybook.svg",
+                icon: storybookIcon,
             },
         ],
         category: "UI & Styling",
@@ -181,11 +211,11 @@ export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
         items: [
             {
                 name: "Github",
-                icon: "src/assets/icons/github.svg",
+                icon: githubIcon,
             },
             {
                 name: "Optimizely",
-                icon: "src/assets/icons/optimizely.svg",
+                icon: optimizelyIcon,
             },
         ],
         category: "Other",
