@@ -23,10 +23,10 @@ export default function MusicBlock() {
 
                 <div className="flex flex-nowrap gap-4 overflow-hidden">
                     <Splide
-                        extensions={{ AutoScroll }} // Add the extension here
+                        extensions={{ AutoScroll }}
                         options={{
                             type: "loop",
-                            autoWidth: true, // Better for variable sized cards
+                            autoWidth: true,
                             gap: "1rem",
                             arrows: false,
                             pagination: false,
