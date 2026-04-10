@@ -61,45 +61,46 @@ export const PROJECTS: Project[] = [
     {
         name: "Stockland Website",
         description:
-            "A customer facing website for Stockland’s residential business, built using VueJs, TailwindCSS and Liquidjs.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        liveLink: "https://www.stockland.com.au/residential",
+            "A customer facing website for Stockland’s residential business, built using Liquidjs, TailwindCSS,Typescript and Vue. Collaborated with a team of developers to build several main frontend components, including the navigation bar, hero sections and article pages",
+        image: "src/assets/images/stockland-homepage.png",
+        liveLink: "https://www.stockland.com.au",
     },
     {
         name: "Mynance",
         description:
-            "A personal finance management app built using React, Typescript and Material UI.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        ghLink: "https://github.com/connorjamesm/mynance",
-        liveLink: "https://mynance.netlify.app/",
+            "A personal finance management web app built using React, Typescript and Material UI. Implemented features such as personal finance visualisation, budget setting and investment tracking with integrated third-party APIs.",
+        image: "src/assets/images/mynance.png",
+        ghLink: "https://github.com/jonathancklee1/mynance",
+        liveLink: "https://jonathancklee1.github.io/mynance/",
     },
     {
         name: "Radial Gradient Generator",
         description:
-            "A web app that generates radial gradients, built using React and TailwindCSS.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        ghLink: "https://github.com/connorjamesm/radial-gradient-generator",
+            "A web app that generates radial gradients, built using React, DaisyUi, TailwindCSS and Zustand. Users can customize the gradient by adjusting parameters such as colors, size and position, and can easily copy the generated CSS code for use in their own projects.",
+        image: "src/assets/images/radial-gradient-generator.png",
+        ghLink: "https://github.com/jonathancklee1/radial-gradient-generator",
+        liveLink: "https://jonathancklee1.github.io/radial-gradient-generator/",
     },
     {
         name: "PocketTrump",
         description:
-            "A mobile app for managing and tracking political news and updates.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        ghLink: "https://github.com/connorjamesm/pockettrump",
-    },
-    {
-        name: "Watch List",
-        description:
-            "A web app for tracking and managing movies and TV shows to watch, built using React and TailwindCSS.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        ghLink: "https://github.com/connorjamesm/watch-list",
+            "A web game based on the popular card game Top Trumps with the theme of Pokemon. Built using React, Tailwind, HeadlessUI, GSAP and Zustand. Implemented game logic, animations and state management to simulate a real card game.",
+        image: "src/assets/images/pocket-trump.png",
+        ghLink: "https://github.com/jonathancklee1/pocket-trump",
+        liveLink: "https://jonathancklee1.github.io/pocket-trump/",
     },
     {
         name: "Dark Mode Blog",
         description:
-            "A blog website with dark mode feature, built using React and TailwindCSS.",
-        image: "https://images.pexels.com/photos/36840852/pexels-photo-36840852.jpeg",
-        ghLink: "https://github.com/connorjamesm/dark-mode-blog",
+            "A small 'dark-mode' blog website built using React, TailwindCSS and GSAP. One of my first projects that I built to learn GSAP animations. Implemented scroll-triggered animations and a dark mode toggle to enhance user experience.",
+        image: "src/assets/images/dark-mode-blog.png",
+        ghLink: "https://github.com/jonathancklee1/dark-mode-website",
+        liveLink: "https://www.darkmodeinfo.dev/",
+    },
+    {
+        name: "New Watch List",
+        description: "Work in progress!",
+        image: "src/assets/images/watch-list.png",
     },
 ];
 

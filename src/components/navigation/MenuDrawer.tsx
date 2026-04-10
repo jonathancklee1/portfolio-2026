@@ -38,7 +38,7 @@ function MenuDrawer({
             {PAGE_LINKS.map((link) => (
                 <li
                     key={link}
-                    className={`menu-button glassmorphism w-fit translate-x-37.5 rounded-3xl rounded-tl-xl bg-white/20 px-6 py-3 text-lg capitalize shadow-lg`}
+                    className={`menu-button glassmorphism w-fit translate-x-37.5 rounded-3xl rounded-tl-xl border-white bg-white/10 px-6 py-3 text-lg capitalize shadow-lg`}
                 >
                     <a
                         href={`#${link}`}

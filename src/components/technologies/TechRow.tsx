@@ -57,10 +57,7 @@ export function TechRow({ title, technologies, pillColour }: TechRow) {
                                 position={[0, 0, 15]}
                             />
                         </CanvasComponent>
-                        <Pill
-                            background={pillColour}
-                            colour={"var(--color-text)"}
-                        >
+                        <Pill background={pillColour} colour={"black"}>
                             <span>{tech.name}</span>
                         </Pill>
                     </div>

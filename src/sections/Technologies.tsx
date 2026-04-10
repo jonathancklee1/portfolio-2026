@@ -5,15 +5,15 @@ function Technologies() {
     function getPillColour(index: number) {
         switch (index) {
             case 0:
-                return "bg-[#c32f27]";
+                return "bg-[#90f3ff]";
             case 1:
-                return "bg-[#e2711d]";
+                return "bg-[#68edc6]";
             case 2:
-                return "bg-[#218380]";
+                return "bg-[#90bede]";
             case 3:
-                return "bg-[#0582ca]";
+                return "bg-[#dffdff]";
             case 4:
-                return "bg-[#6a4c93]";
+                return "bg-[#e5e1ee]";
             default:
                 return "bg-gray-500";
         }
