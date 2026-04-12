@@ -19,7 +19,15 @@ function CanvasComponent({
                 cursor: "grab",
             }}
         >
-            <Canvas {...props}>{children}</Canvas>
+            <Canvas
+                {...props}
+                dpr={[1, 2]}
+                // Prevents the browser from trying to "scroll" the 3D scene
+                style={{ touchAction: "none" }}
+                camera={{ fov: 75 }}
+            >
+                {children}
+            </Canvas>
         </div>
     );
 }

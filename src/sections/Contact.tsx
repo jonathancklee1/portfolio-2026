@@ -22,6 +22,16 @@ function Contact() {
                 ease: "power3.out",
             })
                 .from(
+                    ".white-divider",
+                    {
+                        autoAlpha: 0,
+                        y: 40,
+                        duration: 0.5,
+                        ease: "power3.out",
+                    },
+                    "<",
+                )
+                .from(
                     ".cta-text",
                     {
                         autoAlpha: 0,
@@ -48,7 +58,7 @@ function Contact() {
             ref={contactSectionRef}
         >
             <SectionHeader text="Contact Me" />
-            <div className="bg-text h-px w-full"></div>
+            <div className="white-divider bg-text h-px w-full"></div>
             <p className="cta-text text-md font-bold lg:text-lg">
                 Shoot me an email or connect with me on LinkedIn
             </p>
