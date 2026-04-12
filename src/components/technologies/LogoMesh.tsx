@@ -58,7 +58,7 @@ function LogoMesh({
                     <extrudeGeometry
                         args={[
                             item.shape,
-                            { depth: 2, bevelEnabled: true, bevelSize: 0.5 },
+                            { depth: 2, bevelEnabled: false, curveSegments: 4 },
                         ]}
                     />
                     <meshStandardMaterial
