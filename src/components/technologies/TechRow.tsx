@@ -1,8 +1,6 @@
 import type { TechRow } from "../../utils/types";
-import CanvasComponent from "../Canvas";
 import Pill from "../Pill";
-import LogoMesh from "./LogoMesh";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import TechLogo from "./TechLogo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -36,27 +34,13 @@ export function TechRow({ title, technologies, pillColour }: TechRow) {
             <h3 className="row-heading text-xl font-bold">{title}</h3>
             <div className="mt-4 flex max-w-full flex-wrap gap-6">
                 {technologies.map((tech) => (
-                    <div className="tech-icon flex flex-col items-center gap-2">
-                        <CanvasComponent
+                    <div className="tech-icon group flex flex-col items-center gap-2">
+                        <div
                             key={tech.name}
-                            height="60px"
-                            width="60px"
+                            className="perspective-1000 flex h-15 w-15 items-center justify-center hover:animate-[rotateY_2s_linear_infinite]"
                         >
-                            <LogoMesh svgPath={tech.icon} />
-                            <ambientLight intensity={2.5} />
-
-                            <OrbitControls
-                                // autoRotate={true}
-                                makeDefault
-                                minPolarAngle={Math.PI / 2}
-                                maxPolarAngle={Math.PI / 2}
-                                enableZoom={false}
-                            />
-                            <PerspectiveCamera
-                                makeDefault
-                                position={[0, 0, 15]}
-                            />
-                        </CanvasComponent>
+                            <TechLogo svgPath={tech.icon || ""} />
+                        </div>
                         <Pill background={pillColour} colour={"black"}>
                             <span>{tech.name}</span>
                         </Pill>

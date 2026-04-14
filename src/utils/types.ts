@@ -36,7 +36,7 @@ export type CATEGORY =
 
 export type TECHNOLOGY = {
     name: string;
-    icon: string;
+    icon?: string;
 };
 export type TECHNOLOGY_CATEGORY = {
     items: TECHNOLOGY[];

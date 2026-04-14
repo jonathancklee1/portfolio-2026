@@ -48,21 +48,30 @@
         border: none;
         cursor: pointer;
     }
-    dialog {
-        transition:
-            display 0.75s allow-discrete,
-            overlay 0.75s allow-discrete;
+}
 
-        animation: close 0.75s forwards;
-        &[open] {
-            animation: open 0.75s forwards;
-        }
+@keyframes rotateY {
+    from {
+        transform: rotateY(0deg);
     }
-    li.code-arrow::marker {
-        color: var(--color-neon-green);
-        font-weight: bold;
-        content: ">";
+    to {
+        transform: rotateY(360deg);
     }
+}
+dialog {
+    transition:
+        display 0.75s allow-discrete,
+        overlay 0.75s allow-discrete;
+
+    animation: close 0.75s forwards;
+    &[open] {
+        animation: open 0.75s forwards;
+    }
+}
+li.code-arrow::marker {
+    color: var(--color-neon-green);
+    font-weight: bold;
+    content: ">";
 }
 
 @layer components {
