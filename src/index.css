@@ -16,7 +16,6 @@
 @layer base {
     html {
         scroll-behavior: smooth;
-        background-color: var(--color-background);
     }
     html:has(dialog[open]) {
         overflow: hidden;
@@ -25,7 +24,7 @@
     header,
     footer {
         font-family: "Monospace", sans-serif;
-        background-color: var(--color-background);
+
         color: var(--color-text);
         max-width: var(--width-container);
         margin-inline: auto;
@@ -47,6 +46,13 @@
         border-radius: 0.25rem;
         border: none;
         cursor: pointer;
+    }
+    .gradient-bg {
+        background: radial-gradient(
+            ellipse at 50% 49%,
+            #54052c 0%,
+            #00152f 100%
+        );
     }
 }
 

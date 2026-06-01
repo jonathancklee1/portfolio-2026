@@ -34,10 +34,10 @@ export function TechRow({ title, technologies, pillColour }: TechRow) {
             <h3 className="row-heading text-xl font-bold">{title}</h3>
             <div className="mt-4 flex max-w-full flex-wrap gap-6">
                 {technologies.map((tech) => (
-                    <div className="tech-icon group flex flex-col items-center gap-2">
+                    <div className="tech-icon group group flex flex-col items-center gap-2">
                         <div
                             key={tech.name}
-                            className="perspective-1000 flex h-15 w-15 items-center justify-center hover:animate-[rotateY_2s_linear_infinite]"
+                            className="perspective-1000 flex h-15 w-15 items-center justify-center group-hover:animate-[rotateY_2s_linear_infinite]"
                         >
                             <TechLogo svgPath={tech.icon || ""} />
                         </div>

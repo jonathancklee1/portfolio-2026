@@ -90,17 +90,18 @@ function About() {
                         }
                     />
                     <p className="about-quote text-center text-lg lg:text-xl">
-                        I’m a junior front‑end developer who loves turning ideas
-                        into clean, responsive, and genuinely enjoyable web
-                        experiences. Whether it’s refining UI details, improving
-                        performance, or learning the next cool framework, I’m
-                        always chasing that “oh, that’s nice” moment in a
-                        project.
+                        Working as a front‑end developer has made me discover my
+                        passion in turning ideas from my head into clean,
+                        responsive, and user-first web experiences. Whether it’s
+                        building personal projects for myself to use or working
+                        on large collaborative corporate projects, I find the
+                        fun in solving problems, building big features and
+                        learning new things along the way.
                         <br />
                         <br />
-                        When I’m not coding, I’m usually exploring design trends
-                        or tinkering with side projects that help me grow as a
-                        developer.
+                        When I’m not coding, I’m usually exploring new ideas and
+                        learning about technologies that will help me push my
+                        skills to the next level.
                     </p>
                     <Quotes
                         className={

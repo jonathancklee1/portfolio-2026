@@ -60,7 +60,7 @@ function Hero() {
         { scope: containerRef },
     );
     return (
-        <section className="flex h-[calc(100vh-76px)] flex-col justify-center gap-8 md:flex-row md:items-center lg:gap-36">
+        <section className="flex h-[calc(100vh-76px)] flex-col justify-center gap-8 md:flex-row md:items-center lg:gap-30">
             <div className="tracking-wide" ref={containerRef}>
                 <span className="greeting-text inline-block text-2xl font-medium md:text-4xl">
                     Hi, I'm
@@ -70,10 +70,10 @@ function Hero() {
                         Jonathan Lee
                     </span>
                 </h1>
-                <h2 className="text-secondary role-text mt-2 text-3xl font-bold md:text-3xl">
+                <h2 className="from-secondary role-text mt-2 bg-linear-to-r to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-3xl">
                     Front-end Developer
                 </h2>
-                <p className="introduction-text mt-4 max-w-125 text-(--color-text-secondary) md:text-2xl">
+                <p className="introduction-text mt-4 max-w-180 text-(--color-text-secondary) md:text-2xl">
                     I’m currently working as a Junior Front-end Developer at{" "}
                     <a
                         href="https://www.stockland.com.au/"
@@ -95,7 +95,7 @@ function Hero() {
                         <Github
                             height={"38px"}
                             width={"38px"}
-                            className="fill-secondary transition-all hover:-translate-y-1.5 hover:fill-white"
+                            className="text-secondary transition-all hover:-translate-y-1.5 hover:text-white"
                         />
                     </a>
                     <a
@@ -122,7 +122,7 @@ function Hero() {
                     </a>
                 </div>
             </div>
-            <div className="bg-stockland size-64">{/* <Canvas /> */}</div>
+            <div className="hidden size-64 md:block"></div>
         </section>
     );
 }

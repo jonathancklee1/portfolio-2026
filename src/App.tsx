@@ -26,7 +26,7 @@ function App() {
     return (
         <>
             <ReactLenis root />
-            <div className="bg-background text-text relative min-h-screen overflow-clip px-6 md:px-12">
+            <div className="gradient-bg text-text relative min-h-screen overflow-clip px-6 md:px-12">
                 <Navbar />
                 <main>
                     <Hero />

@@ -96,6 +96,14 @@ export const PROJECTS: Project[] = [
         liveLink: "https://www.stockland.com.au",
     },
     {
+        name: "MyWatchList",
+        description:
+            "A media tracking and discovery web application that allows users to explore trending movies, TV shows, and anime. Built using React and Typescript, the platform queries data from TheMovieDatabase (TMDB) and MyAnimeList (MAL), while featuring a user-friendly dashboard to seamlessly organize and manage your watchlists.",
+        image: watchList,
+        ghLink: "https://github.com/jonathancklee1/watch-list",
+        liveLink: "https://my-media-watch-list.netlify.app/",
+    },
+    {
         name: "Mynance",
         description:
             "A personal finance management web app built using React, Typescript and Material UI. Implemented features such as personal finance visualisation, budget setting and investment tracking with integrated third-party APIs.",
@@ -114,7 +122,7 @@ export const PROJECTS: Project[] = [
     {
         name: "PocketTrump",
         description:
-            "A web game based on the popular card game Top Trumps with the theme of Pokemon. Built using React, Tailwind, HeadlessUI, GSAP and Zustand. Implemented game logic, animations and state management to simulate a real card game.",
+            "A web game based on the popular card game, Top Trumps with the theme of Pokemon. Built using React, Tailwind, HeadlessUI, GSAP and Zustand. Implemented game logic, animations and state management to simulate a real card game.",
         image: pocketTrump,
         ghLink: "https://github.com/jonathancklee1/pocket-trump",
         liveLink: "https://jonathancklee1.github.io/pocket-trump/",
@@ -126,11 +134,6 @@ export const PROJECTS: Project[] = [
         image: darkModeBlog,
         ghLink: "https://github.com/jonathancklee1/dark-mode-website",
         liveLink: "https://www.darkmodeinfo.dev/",
-    },
-    {
-        name: "New Watch List",
-        description: "Work in progress!",
-        image: watchList,
     },
 ];
 
