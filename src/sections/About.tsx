@@ -117,7 +117,7 @@ function About() {
                             <div className="green-dot"></div>
                         </div>
                         <p className="text-md font-bold lg:text-lg">
-                            Currently learning 3D web development
+                            Currently learning NextJS
                         </p>
                     </div>
 
