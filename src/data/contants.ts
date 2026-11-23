@@ -14,8 +14,8 @@ import sweatersWeatherSquare from "../assets/images/sweater-weather-square.png";
 import stocklandHomepage from "../assets/images/stockland-homepage.png";
 import mynance from "../assets/images/mynance.png";
 import radialGradientGenerator from "../assets/images/radial-gradient-generator.png";
-import pocketTrump from "../assets/images/pocket-trump.png";
-import darkModeBlog from "../assets/images/dark-mode-blog.png";
+import pokemonBinder from "../assets/images/pokemon-binder.png";
+import restaurantRecommender from "../assets/images/restaurant-recommender.png";
 import watchList from "../assets/images/watch-list.png";
 
 // Icons
@@ -34,6 +34,15 @@ import materialuiIcon from "../assets/icons/materialui.svg";
 import storybookIcon from "../assets/icons/storybook.svg";
 import githubIcon from "../assets/icons/github.svg";
 import optimizelyIcon from "../assets/icons/optimizely.svg";
+import nextjsIcon from "../assets/icons/nextjs.svg";
+import shopifyIcon from "../assets/icons/shopify.svg";
+import styledComponentsIcon from "../assets/icons/styled-components.svg";
+import daisyuiIcon from "../assets/icons/daisyui.svg";
+import gsapIcon from "../assets/icons/gsap.svg";
+import figmaIcon from "../assets/icons/figma.svg";
+import reactRouterIcon from "../assets/icons/react-router.svg";
+import playwrightIcon from "../assets/icons/playwright.svg";
+import claudeIcon from "../assets/icons/claude.svg";
 
 export const EXPERIENCES: Experience[] = [
     {
@@ -120,107 +129,61 @@ export const PROJECTS: Project[] = [
         liveLink: "https://jonathancklee1.github.io/radial-gradient-generator/",
     },
     {
-        name: "PocketTrump",
+        name: "Pokemon Binder",
         description:
-            "A web game based on the popular card game, Top Trumps with the theme of Pokemon. Built using React, Tailwind, HeadlessUI, GSAP and Zustand. Implemented game logic, animations and state management to simulate a real card game.",
-        image: pocketTrump,
-        ghLink: "https://github.com/jonathancklee1/pocket-trump",
-        liveLink: "https://jonathancklee1.github.io/pocket-trump/",
+            "A web app that replicates having a digital binder for your pokemon cards. Built using Next.js, Typescript, Tailwind CSS with DaisyUI and Zustand. Features include viewing sets and card from the TCGdex API, CRUD actions with cards in binders and customisation options like colour and size for your binders.",
+        image: pokemonBinder,
+        ghLink: "https://github.com/jonathancklee1/pokemon-binder",
+        liveLink: "https://pokemon-binder-sigma.vercel.app/",
     },
     {
-        name: "Dark Mode Blog",
+        name: "Restaurant Recommender",
         description:
-            "A small 'dark-mode' blog website built using React, TailwindCSS and GSAP. One of my first projects that I built to learn GSAP animations. Implemented scroll-triggered animations and a dark mode toggle to enhance user experience.",
-        image: darkModeBlog,
-        ghLink: "https://github.com/jonathancklee1/dark-mode-website",
-        liveLink: "https://www.darkmodeinfo.dev/",
+            "A restaurant database app with a 'pick where to eat' feature to help make a randomised choice on a restaurant to eat at. Built using React, Typescript, CSS modules Leaflet with OpenStreetMap tiles, and Nominatim for address search, the website supports standard CRUD operations on restaurant data, filtering, restaurant randomiser and a map feature to locate the restaurant.",
+        image: restaurantRecommender,
+        ghLink: "https://github.com/jonathancklee1/restaurant-recommender",
+        liveLink: "https://restaurant-recommender-app-beryl.vercel.app/",
     },
 ];
 
 export const TECH_STACK: TECHNOLOGY_CATEGORY[] = [
     {
         items: [
-            {
-                name: "HTML5",
-                icon: html5Icon,
-            },
-            {
-                name: "CSS3",
-                icon: css3Icon,
-            },
-            {
-                name: "Javascript",
-                icon: javascriptIcon,
-            },
-            {
-                name: "Typescript",
-                icon: typescriptIcon,
-            },
+            { name: "React", icon: reactjsIcon },
+            { name: "TypeScript", icon: typescriptIcon },
+            { name: "Next.js", icon: nextjsIcon },
+            { name: "Vue", icon: vueIcon },
+            { name: "HTML5", icon: html5Icon },
+            { name: "CSS3", icon: css3Icon },
+            { name: "JavaScript (ES6+)", icon: javascriptIcon },
+            { name: "Shopify Liquid", icon: shopifyIcon },
         ],
-        category: "Languages",
+        category: "Languages and Frameworks",
     },
     {
         items: [
-            {
-                name: "ReactJS",
-                icon: reactjsIcon,
-            },
-            {
-                name: "Vue",
-                icon: vueIcon,
-            },
+            { name: "Tailwind CSS", icon: tailwindIcon },
+            { name: "Material UI", icon: materialuiIcon },
+            { name: "Styled Components", icon: styledComponentsIcon },
+            { name: "DaisyUI", icon: daisyuiIcon },
+            { name: "GSAP", icon: gsapIcon },
+            { name: "Storybook", icon: storybookIcon },
+            { name: "Figma", icon: figmaIcon },
         ],
-        category: "Frameworks",
+        category: "Styling & UI Systems",
     },
     {
         items: [
-            {
-                name: "Zustand",
-                icon: zustandIcon,
-            },
-            {
-                name: "VuePinia",
-                icon: piniaIcon,
-            },
-            {
-                name: "Graphql",
-                icon: graphqlIcon,
-            },
-            {
-                name: "React Query",
-                icon: reactQueryIcon,
-            },
+            { name: "GraphQL", icon: graphqlIcon },
+            { name: "React Router", icon: reactRouterIcon },
+            { name: "Zustand", icon: zustandIcon },
+            { name: "Playwright", icon: playwrightIcon },
+            { name: "Optimizely CMS", icon: optimizelyIcon },
+            { name: "Claude Code", icon: claudeIcon },
+            { name: "Pinia", icon: piniaIcon },
+            { name: "React Query", icon: reactQueryIcon },
+            { name: "Github", icon: githubIcon },
         ],
-        category: "State & Data",
-    },
-    {
-        items: [
-            {
-                name: "TailwindCSS",
-                icon: tailwindIcon,
-            },
-            {
-                name: "MaterialUI",
-                icon: materialuiIcon,
-            },
-            {
-                name: "StoryBook",
-                icon: storybookIcon,
-            },
-        ],
-        category: "UI & Styling",
-    },
-    {
-        items: [
-            {
-                name: "Github",
-                icon: githubIcon,
-            },
-            {
-                name: "Optimizely",
-                icon: optimizelyIcon,
-            },
-        ],
-        category: "Other",
+        category: "Tools and Libraries",
     },
 ];

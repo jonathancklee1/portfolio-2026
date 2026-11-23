@@ -28,11 +28,9 @@ export interface TechRow {
     pillColour: string;
 }
 export type CATEGORY =
-    | "Languages"
-    | "Frameworks"
-    | "State & Data"
-    | "UI & Styling"
-    | "Other";
+    | "Languages and Frameworks"
+    | "Styling & UI Systems"
+    | "Tools and Libraries";
 
 export type TECHNOLOGY = {
     name: string;
